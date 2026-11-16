@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PKC Gateway</title>
+<style>
+  :root { --bg:#0f172a; --panel:#1e293b; --line:#334155; --fg:#e2e8f0; --dim:#94a3b8; --acc:#38bdf8; --ok:#4ade80; --warn:#fbbf24; --bad:#f87171; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:ui-sans-serif,system-ui,sans-serif; background:var(--bg); color:var(--fg); font-size:14px; }
+  header { display:flex; gap:16px; align-items:center; padding:12px 20px; background:var(--panel); border-bottom:1px solid var(--line); flex-wrap:wrap; }
+  header h1 { font-size:16px; margin:0; }
+  .pill { padding:2px 10px; border-radius:999px; font-size:12px; border:1px solid var(--line); }
+  .ok { color:var(--ok); } .bad { color:var(--bad); } .dim { color:var(--dim); }
+  nav { display:flex; gap:4px; padding:0 20px; background:var(--panel); border-bottom:1px solid var(--line); }
+  nav button { background:none; border:none; border-bottom:2px solid transparent; color:var(--dim); padding:10px 14px; font-size:14px; cursor:pointer; }
+  nav button.active { color:var(--fg); border-bottom-color:var(--acc); }
+  main { padding:16px 20px; max-width:1280px; margin:0 auto; }
+  table { width:100%; border-collapse:collapse; margin-top:8px; }
+  th, td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); font-size:13px; white-space:nowrap; }
+  th { color:var(--dim); font-weight:500; }
+  tr.clickable { cursor:pointer; } tr.clickable:hover { background:#273449; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:14px; margin-bottom:14px; }
+  .card h3 { margin:0 0 10px; font-size:14px; color:var(--acc); }
+  button.btn { background:var(--acc); color:#082f49; border:none; border-radius:6px; padding:6px 12px; font-weight:600; cursor:pointer; font-size:13px; }
+  button.btn.ghost { background:transparent; color:var(--fg); border:1px solid var(--line); }
+  button.btn.warn { background:var(--warn); }
+  input, select, textarea { background:#0b1220; border:1px solid var(--line); color:var(--fg); border-radius:6px; padding:6px 8px; font-size:13px; }
+  textarea { width:100%; min-height:180px; font-family:ui-monospace,monospace; font-size:12px; }
+  .row { display:flex; gap:10px; flex-wrap:wrap; align-items:flex-end; margin-bottom:8px; }
+  label { display:block; font-size:11px; color:var(--dim); margin-bottom:3px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:8px; }
+  pre { background:#0b1220; border:1px solid var(--line); border-radius:6px; padding:10px; overflow:auto; font-size:12px; max-height:340px; }
+  .modal-bg { position:fixed; inset:0; background:rgba(0,0,0,.6); display:none; align-items:center; justify-content:center; z-index:10; }
+  .modal { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:18px; width:min(720px,94vw); max-height:90vh; overflow:auto; }
+  .hidden { display:none; }
+  .flexline { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .warn-note { color:var(--warn); font-size:12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>PKC Gateway</h1>
+  <span class="pill" id="ov-mqtt">MQTT —</span>
+  <span class="pill" id="ov-meters">—</span>
+  <span class="pill" id="ov-pub">—</span>
+  <span class="pill dim" id="ov-modbus">—</span>
+  <span class="pill dim" id="ov-uptime">—</span>
+</header>
+<nav>
+  <button data-tab="metering" class="active">Metering (Modbus → MQTT)</button>
+  <button data-tab="aps">Access Points</button>
+  <button data-tab="unifi">WiFi / UniFi</button>
+  <button data-tab="config">Configuration</button>
+</nav>
+
+<main>
+<section id="tab-metering">
+  <div class="flexline" style="margin-bottom:8px">
+    <button class="btn" onclick="openSimulate()">⚡ Simulate &amp; publish</button>
+    <span class="dim" style="font-size:12px">auto-refresh 5s · click a row for raw registers &amp; transformed data</span>
+  </div>
+  <div class="row">
+    <div><label>Block</label><select id="f-block" onchange="refreshMeters()"><option value="">all</option></select></div>
+    <div><label>Status</label><select id="f-status" onchange="refreshMeters()"><option value="">all</option><option value="on">online</option><option value="off">offline</option></select></div>
+    <span class="dim" id="f-count" style="align-self:end;padding-bottom:8px"></span>
+  </div>
+  <table id="meters-table">
+    <thead><tr>
+      <th>Home</th><th>Serial</th><th>Reg start</th><th>Online</th><th>freq</th><th>kwh (raw)</th>
+      <th>Last write</th><th>Writes</th><th>Last publish</th><th>#</th><th></th>
+    </tr></thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<section id="tab-aps" class="hidden">
+  <div class="card">
+    <h3>Access points → connected clients (controller live view)</h3>
+    <div class="flexline">
+      <button class="btn ghost" onclick="unifiLive()">Refresh now</button>
+      <span class="dim" style="font-size:12px">auto-refresh 30s while this tab is open</span>
+      <span class="bad" id="ap-err"></span>
+    </div>
+    <span class="dim" id="ap-summary" style="font-size:12px">—</span>
+    <table id="ap-table">
+      <thead><tr><th>AP</th><th>State</th><th>Uplink</th><th>AP-sig</th><th>#Cl</th><th>CPU/MEM</th><th>Uptime</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="tab-unifi" class="hidden">
+  <div class="card">
+    <h3>UniFi telemetry → wifi/{source}/status</h3>
+    <div class="row">
+      <div><label>Status</label><span id="uf-enabled">—</span></div>
+      <div><label>Source label</label><span id="uf-source">—</span></div>
+      <div><label>Last poll</label><span id="uf-lastpoll">—</span></div>
+      <div><label>Last publish</label><span id="uf-lastpub">—</span></div>
+      <div><label>Published</label><span id="uf-count">—</span></div>
+      <div><label>Error</label><span id="uf-err" class="bad">—</span></div>
+    </div>
+    <div class="flexline">
+      <button class="btn" onclick="unifiPublishNow()">Publish now</button>
+      <button class="btn ghost" onclick="unifiLive()">Refresh live view</button>
+      <span class="bad" id="uf-live-err"></span>
+    </div>
+  </div>
+  <div class="card hidden" id="uf-live-card">
+    <h3>Controller live view</h3>
+    <b style="font-size:12px;color:var(--dim)">Access points</b>
+    <table id="uf-ap-table"><thead><tr><th>Name</th><th>MAC</th><th>Model</th><th>State</th><th>Uplink</th><th>Signal</th><th>Clients</th><th>CPU</th><th>MEM</th><th>Uptime</th></tr></thead><tbody></tbody></table>
+    <b style="font-size:12px;color:var(--dim);display:block;margin-top:12px">Clients</b>
+    <span class="dim" id="uf-meter-count" style="font-size:12px"></span>
+    <table id="uf-cli-table"><thead><tr><th>Name</th><th>MAC</th><th>IP</th><th>Meter</th><th>AP</th><th>Signal</th><th>Uptime</th></tr></thead><tbody></tbody></table>
+  </div>
+  <div class="card">
+    <h3>Last published payload</h3>
+    <pre id="uf-payload">—</pre>
+  </div>
+</section>
+
+<section id="tab-config" class="hidden">
+  <div class="card">
+    <h3>gateway.config.json</h3>
+    <textarea id="cfg-config"></textarea>
+    <div class="flexline" style="margin-top:8px">
+      <button class="btn" onclick="saveConfig()">Save &amp; apply</button>
+      <span class="dim" style="font-size:12px">MQTT endpoint, meters, intervals apply live · Modbus/web port changes require restart</span>
+    </div>
+  </div>
+  <div class="card">
+    <h3>meters.json (register ↔ serial ↔ house matrix)</h3>
+    <textarea id="cfg-meters" style="min-height:260px"></textarea>
+    <div class="flexline" style="margin-top:8px">
+      <button class="btn" onclick="saveConfig()">Save &amp; apply</button>
+      <span class="dim" style="font-size:12px">edit serials / houses here if the mapping changes</span>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="modal-bg" id="sim-bg" onclick="if(event.target===this)closeSimulate()">
+  <div class="modal">
+    <h3 style="margin:0 0 12px;color:var(--acc)">Simulate &amp; publish a reading</h3>
+    <div class="row">
+      <div><label>Meter (serial · house)</label><select id="sim-serial" style="min-width:280px"></select></div>
+    </div>
+    <p class="warn-note" id="sim-warn"></p>
+    <div class="grid" id="sim-fields"></div>
+    <div class="flexline" style="margin-top:14px">
+      <button class="btn" onclick="doSimulate()">Publish to MQTT</button>
+      <button class="btn ghost" onclick="closeSimulate()">Cancel</button>
+      <span class="dim" style="font-size:12px">goes through the exact production publish path (same topic, same format)</span>
+    </div>
+  </div>
+</div>
+
+<script>
+const SIM_FIELDS = ["kwh","voltAN","voltBN","voltCN","currA","currB","currC","kw","kvar","kva","freq","cosphi"];
+let metersCache = [];
+const meterByIp = new Map();
+let simDetail = null;
+
+for (const b of document.querySelectorAll("nav button")) {
+  b.onclick = () => {
+    document.querySelectorAll("nav button").forEach(x => x.classList.remove("active"));
+    b.classList.add("active");
+    for (const id of ["metering","aps","unifi","config"]) document.getElementById("tab-"+id).classList.toggle("hidden", id !== b.dataset.tab);
+    if (b.dataset.tab === "unifi" || b.dataset.tab === "aps") unifiLive();
+  };
+}
+
+const fmt = (t) => t ? new Date(t).toLocaleTimeString() : "—";
+const ago = (s) => s === null || s === undefined ? "—" : (s < 90 ? s + "s" : Math.round(s / 60) + "m");
+
+async function refreshOverview() {
+  const ov = await (await fetch("/api/overview")).json();
+  document.getElementById("ov-mqtt").textContent = "MQTT " + (ov.publisher.mqttConnected ? "connected" : "DOWN");
+  document.getElementById("ov-mqtt").className = "pill " + (ov.publisher.mqttConnected ? "ok" : "bad");
+  document.getElementById("ov-meters").textContent = ov.publisher.online + "/" + ov.publisher.meters + " meters online";
+  document.getElementById("ov-pub").textContent = ov.publisher.published + " published";
+  if (ov.modbus) {
+    document.getElementById("ov-modbus").textContent = "modbus " + (ov.modbus.openClients ?? "?") + " clients · " + (ov.modbus.totalRegisterWrites ?? 0) + " reg-writes";
+  }
+  document.getElementById("ov-uptime").textContent = "up " + ago(ov.publisher.uptimeSec);
+  if (ov.unifi) {
+    document.getElementById("uf-enabled").textContent = ov.unifi.enabled ? "enabled" : "disabled";
+    document.getElementById("uf-source").textContent = ov.unifi.source || "(hostname)";
+    document.getElementById("uf-lastpoll").textContent = fmt(ov.unifi.lastPollAt);
+    document.getElementById("uf-lastpub").textContent = fmt(ov.unifi.lastPublishAt);
+    document.getElementById("uf-count").textContent = ov.unifi.publishCount;
+    const errEl = document.getElementById("uf-err");
+    errEl.textContent = ov.unifi.lastError || "—";
+    errEl.className = ov.unifi.lastError ? "bad" : "dim";
+    document.getElementById("uf-payload").textContent = ov.unifi.lastPayload ? JSON.stringify(ov.unifi.lastPayload, null, 2) : "— nothing published yet —";
+  }
+}
+
+async function refreshMeters() {
+  metersCache = await (await fetch("/api/meters")).json();
+  meterByIp.clear();
+  for (const m of metersCache) if (m.converterIp) meterByIp.set(m.converterIp, m);
+  ensureBlockOptions();
+  const shown = applyFilters();
+  document.getElementById("f-count").textContent = "showing " + shown.length + " of " + metersCache.length + " meters";
+  const tb = document.querySelector("#meters-table tbody");
+  tb.innerHTML = "";
+  for (const m of shown) {
+    const tr = document.createElement("tr");
+    tr.className = "clickable";
+    tr.onclick = () => showMeterDetail(m.serial);
+    tr.innerHTML = `<td>${m.home ?? ""}</td><td>${m.serial}</td><td>${m.start}</td>` +
+      `<td class="${m.online ? "ok" : "bad"}">${m.online ? "online" : "offline"}</td>` +
+      `<td>${m.freq === null ? "—" : m.freq.toFixed(1)}</td>` +
+      `<td>${m.kwh === null ? "—" : m.kwh.toFixed(1)}</td>` +
+      `<td class="dim">${ago(m.secondsSinceWrite)}</td>` +
+      `<td class="dim">${m.writeCount ?? 0}</td>` +
+      `<td class="dim">${fmt(m.lastPublishAt)}</td>` +
+      `<td class="dim">${m.publishCount}</td>` +
+      `<td><button class="btn ghost" onclick="event.stopPropagation();publishNow('${m.serial}')">publish</button></td>`;
+    tb.appendChild(tr);
+  }
+}
+
+const blockOf = (h) => (h && (h.match(/^[A-Za-z]+/) || [])[0]) || "?";
+let blocksSig = null;
+function ensureBlockOptions() {
+  const blocks = [...new Set(metersCache.map((m) => blockOf(m.home)))].sort();
+  const sig = blocks.join(",");
+  if (sig === blocksSig) return;
+  blocksSig = sig;
+  const sel = document.getElementById("f-block");
+  const cur = sel.value;
+  sel.innerHTML = '<option value="">all</option>' + blocks.map((b) => `<option value="${b}">${b}</option>`).join("");
+  sel.value = blocks.includes(cur) ? cur : "";
+}
+function applyFilters() {
+  const b = document.getElementById("f-block").value;
+  const s = document.getElementById("f-status").value;
+  return metersCache.filter((m) => (!b || blockOf(m.home) === b) && (s === "on" ? m.online : s === "off" ? !m.online : true));
+}
+
+let unifiCache = { t: 0, data: null };
+async function unifiClientsCached() {
+  if (Date.now() - unifiCache.t < 60000) return unifiCache.data;
+  try {
+    const r = await fetch("/api/unifi/live");
+    unifiCache = { t: Date.now(), data: r.ok ? await r.json() : null };
+  } catch { unifiCache = { t: Date.now(), data: null }; }
+  return unifiCache.data;
+}
+
+async function showMeterDetail(serial) {
+  const d = await (await fetch("/api/meters/" + encodeURIComponent(serial))).json();
+  if (!d.rawRegisters) return;
+  const raw = d.rawRegisters.map((v, i) => `${String(i).padStart(2, "0")}:${(v & 0xffff).toString(16).padStart(4, "0")}`).join("  ");
+  const seg3 = d.rawRegisters[1], seg4 = d.rawRegisters[2];
+  const convIp = seg3 > 0 && seg4 > 0 ? `192.168.${seg3}.${seg4}` : null;
+  let convLine;
+  if (!convIp) convLine = "CONVERTER IP: (not written by converter)";
+  else {
+    const uf = await unifiClientsCached();
+    if (!uf) convLine = `CONVERTER IP: ${convIp} — UniFi disabled or unreachable`;
+    else {
+      const c = (uf.clients || []).find((c) => c.ip && c.ip.endsWith("." + seg3 + "." + seg4));
+      convLine = c
+        ? `CONVERTER IP: ${convIp} — WiFi client "${c.name}" on AP ${c.ap || "?"}, signal ${c.signal ?? "?"} dBm`
+        : `CONVERTER IP: ${convIp} — no WiFi-client match (wired or offline)`;
+    }
+  }
+  alert(
+    `${serial} (${d.home ?? "?"}) — block @ register ${d.start}\n\n` +
+    `${convLine}\n\n` +
+    `RAW REGISTERS (idx:hex):\n${raw}\n\n` +
+    `DECODED: ${JSON.stringify(d.decoded)}\n\n` +
+    `LAST PUBLISHED PAYLOAD: ${JSON.stringify(d.lastPayload ?? null)}\n` +
+    `lastWrite=${fmt(d.lastWriteAt)} writes=${d.writeCount ?? 0} lastPublish=${fmt(d.lastPublishAt)} n=${d.publishCount}`
+  );
+}
+
+async function publishNow(serial) {
+  const r = await fetch(`/api/meters/${encodeURIComponent(serial)}/publish`, { method: "POST" });
+  alert(r.ok ? `Published ${serial}` : `Failed: ${(await r.json()).error}`);
+  refreshMeters();
+}
+
+function openSimulate() {
+  const sel = document.getElementById("sim-serial");
+  sel.innerHTML = "";
+  for (const m of metersCache) {
+    const o = document.createElement("option");
+    o.value = m.serial;
+    o.textContent = `${m.serial} · ${m.home ?? ""} ${m.online ? "(online)" : "(offline)"}`;
+    sel.appendChild(o);
+  }
+  sel.onchange = fillSimDefaults;
+  document.getElementById("sim-bg").style.display = "flex";
+  fillSimDefaults();
+}
+function closeSimulate() { document.getElementById("sim-bg").style.display = "none"; }
+
+async function fillSimDefaults() {
+  const serial = document.getElementById("sim-serial").value;
+  const d = await (await fetch("/api/meters/" + encodeURIComponent(serial))).json();
+  simDetail = d;
+  const wrap = document.getElementById("sim-fields");
+  wrap.innerHTML = "";
+  const defaults = {
+    kwh: d.decoded?.kwhImport ?? 0, voltAN: d.decoded?.voltAN ?? 220, voltBN: d.decoded?.voltBN ?? 220, voltCN: d.decoded?.voltCN ?? 220,
+    currA: d.decoded?.currA ?? 1, currB: d.decoded?.currB ?? 1, currC: d.decoded?.currC ?? 1,
+    kw: d.decoded?.kWtotal ?? 0.5, kvar: d.decoded?.kVARtotal ?? 0.1, kva: d.decoded?.kVAtotal ?? 0.5,
+    freq: 50, cosphi: d.decoded?.pf ?? 1,
+  };
+  for (const f of SIM_FIELDS) {
+    const div = document.createElement("div");
+    div.innerHTML = `<label>${f}</label><input id="sim-${f}" type="number" step="any" value="${defaults[f]}">`;
+    wrap.appendChild(div);
+  }
+  document.getElementById("sim-warn").textContent =
+    d.decoded && defaults.kwh > 0 ? `current register kwh = ${d.decoded.kwhImport.toFixed(2)} — kwh must be >= this (cumulative counter)` : "";
+}
+
+async function doSimulate() {
+  const serial = document.getElementById("sim-serial").value;
+  const readings = {};
+  for (const f of SIM_FIELDS) readings[f] = Number(document.getElementById("sim-" + f).value);
+  const r = await fetch("/api/simulate", {
+    method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ serial, readings }),
+  });
+  alert(r.ok ? `Published simulated reading for ${serial}` : `Failed: ${(await r.json()).error}`);
+  if (r.ok) closeSimulate();
+}
+
+async function unifiPublishNow() {
+  const r = await fetch("/api/unifi/publish-now", { method: "POST" });
+  alert(r.ok ? `Published ${(await r.json()).devices} devices` : `Failed: ${(await r.json()).error}`);
+  refreshOverview();
+}
+let unifiLiveData = null, unifiLiveT = 0;
+async function fetchLive() {
+  if (unifiLiveData && Date.now() - unifiLiveT < 15000) return unifiLiveData;
+  const r = await fetch("/api/unifi/live");
+  if (!r.ok) throw new Error((await r.json()).error);
+  unifiLiveData = await r.json();
+  unifiLiveT = Date.now();
+  return unifiLiveData;
+}
+
+async function unifiLive() {
+  let d;
+  try {
+    d = await fetchLive();
+  } catch (e) {
+    const msg = "live view failed: " + e.message;
+    document.getElementById("uf-live-err").textContent = msg;
+    document.getElementById("ap-err").textContent = msg;
+    return;
+  }
+  document.getElementById("uf-live-err").textContent = "";
+  document.getElementById("ap-err").textContent = "";
+  document.getElementById("uf-live-card").classList.remove("hidden");
+  const ap = document.querySelector("#uf-ap-table tbody"); ap.innerHTML = "";
+  for (const x of d.devices) ap.insertAdjacentHTML("beforeend",
+    `<tr><td>${x.name}</td><td>${x.mac}</td><td>${x.model ?? ""}</td><td class="${x.state === 1 ? "ok" : "bad"}">${x.state === 1 ? "online" : x.state}</td>` +
+    `<td>${x.uplinkType ?? ""} ${x.uplinkParent ? "→ " + x.uplinkParent : ""}</td><td>${x.uplinkSignal ?? "—"}</td><td>${x.clientCount ?? 0}</td>` +
+    `<td>${x.cpu ?? "—"}</td><td>${x.memory ?? "—"}</td><td>${ago(x.uptimeSec)}</td></tr>`);
+  const cl = document.querySelector("#uf-cli-table tbody"); cl.innerHTML = "";
+  let metersSeen = 0;
+  for (const x of d.clients) {
+    const m = x.ip ? meterByIp.get(x.ip) : null;
+    if (m) metersSeen++;
+    cl.insertAdjacentHTML("beforeend",
+      `<tr${m ? ' style="background:#273449"' : ""}><td>${x.name}</td><td>${x.mac}</td><td>${x.ip ?? "—"}</td>` +
+      `<td class="${m ? "ok" : "dim"}">${m ? m.home + " · " + m.serial + (m.online ? "" : " (register-only)") : ""}</td>` +
+      `<td>${x.ap ?? "—"}</td><td>${x.signal ?? "—"}</td><td>${ago(x.uptimeSec)}</td></tr>`);
+  }
+  document.getElementById("uf-meter-count").textContent = metersSeen + " of " + d.clients.length + " WiFi clients are house meters (highlighted)";
+  renderAps(d);
+}
+
+function renderAps(d) {
+  const tb = document.querySelector("#ap-table tbody"); tb.innerHTML = "";
+  let up = 0, metersSeen = 0;
+  for (const ap of [...d.devices].sort((a, b) => (a.name || "").localeCompare(b.name || ""))) {
+    const cl = d.clients.filter((c) => c.ap === ap.mac);
+    const isUp = ap.state === 1;
+    if (isUp) up++;
+    tb.insertAdjacentHTML("beforeend",
+      `<tr><td><b>${ap.name}</b></td><td class="${isUp ? "ok" : "bad"}">${isUp ? "up" : "state " + ap.state}</td>` +
+      `<td>${ap.uplinkType ?? ""}${ap.uplinkParent ? " → " + ap.uplinkParent : ""}</td><td>${ap.uplinkSignal ?? "—"}</td>` +
+      `<td>${cl.length}</td><td>${ap.cpu ?? "—"} / ${ap.memory ?? "—"}</td><td>${ago(ap.uptimeSec)}</td></tr>`);
+    if (!cl.length) tb.insertAdjacentHTML("beforeend", `<tr><td></td><td colspan="6" class="dim">no clients</td></tr>`);
+    for (const c of cl) {
+      const m = c.ip ? meterByIp.get(c.ip) : null;
+      if (m) metersSeen++;
+      tb.insertAdjacentHTML("beforeend",
+        `<tr${m ? ' style="background:#273449"' : ""}><td class="dim">↳ ${c.name}</td>` +
+        `<td colspan="6" class="${m ? "ok" : "dim"}">${c.ip ?? "no IP"} · MAC ${c.mac}` +
+        `${m ? " · METER " + m.home + " (" + m.serial + ")" : ""} · signal ${c.signal ?? "?"} dBm · up ${ago(c.uptimeSec)}</td></tr>`);
+    }
+  }
+  document.getElementById("ap-summary").textContent =
+    d.devices.length + " APs: " + up + " up, " + (d.devices.length - up) + " down/isolated · " +
+    d.clients.length + " WiFi clients, " + metersSeen + " are house meters · fetched " + new Date().toLocaleTimeString();
+}
+
+async function loadConfigTab() {
+  const d = await (await fetch("/api/config")).json();
+  document.getElementById("cfg-config").value = JSON.stringify(d.config, null, 2);
+  document.getElementById("cfg-meters").value = JSON.stringify(d.meters, null, 2);
+}
+async function saveConfig() {
+  let config = null, meters = null;
+  try { config = JSON.parse(document.getElementById("cfg-config").value); } catch { alert("gateway.config.json is not valid JSON"); return; }
+  try { meters = JSON.parse(document.getElementById("cfg-meters").value); } catch { alert("meters.json is not valid JSON"); return; }
+  const r = await fetch("/api/config", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ config, meters }) });
+  const d = await r.json();
+  if (!r.ok) { alert("Save failed: " + d.error); return; }
+  alert(d.restartRequired ? "Saved. RESTART REQUIRED for modbus/web port changes (pm2 restart pkc-gateway)" : "Saved and applied live");
+}
+
+refreshOverview(); refreshMeters(); loadConfigTab();
+setInterval(() => { refreshOverview(); refreshMeters(); }, 5000);
+setInterval(() => {
+  if (!document.getElementById("tab-unifi").classList.contains("hidden") || !document.getElementById("tab-aps").classList.contains("hidden")) unifiLive();
+}, 30000);
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "pkc-node-gateway",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "PKC Raspberry Pi gateway: Modbus TCP server + meter MQTT publisher + UniFi telemetry + dashboard",
+  "main": "gateway.js",
+  "scripts": {
+    "start": "node gateway.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "modbus-serial": "^8.0.23",
+    "mqtt": "^5.14.1"
+  }
+}

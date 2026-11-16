@@ -1,0 +1,1664 @@
+[
+  {
+    "start": 0,
+    "name": "metering001",
+    "devSer": "PCU18070093",
+    "home": "D01"
+  },
+  {
+    "start": 100,
+    "name": "metering002",
+    "devSer": "PCU18070094",
+    "home": "D02"
+  },
+  {
+    "start": 200,
+    "name": "metering003",
+    "devSer": "PCU18070095",
+    "home": "D02A"
+  },
+  {
+    "start": 300,
+    "name": "metering004",
+    "devSer": "PCU18070096",
+    "home": "D02B"
+  },
+  {
+    "start": 400,
+    "name": "metering005",
+    "devSer": "PCU18070097",
+    "home": "D03"
+  },
+  {
+    "start": 500,
+    "name": "metering006",
+    "devSer": "PCU18070098",
+    "home": "D04"
+  },
+  {
+    "start": 600,
+    "name": "metering007",
+    "devSer": "PCU18070099",
+    "home": "D04A"
+  },
+  {
+    "start": 700,
+    "name": "metering008",
+    "devSer": "PCU18070100",
+    "home": "D04B"
+  },
+  {
+    "start": 800,
+    "name": "metering009",
+    "devSer": "PCU18070101",
+    "home": "D05"
+  },
+  {
+    "start": 900,
+    "name": "metering010",
+    "devSer": "PCU18070102",
+    "home": "D06"
+  },
+  {
+    "start": 1000,
+    "name": "metering011",
+    "devSer": "PCU18070103",
+    "home": "D08"
+  },
+  {
+    "start": 1200,
+    "name": "metering013",
+    "devSer": "PCU18070104",
+    "home": "D09"
+  },
+  {
+    "start": 1300,
+    "name": "metering014",
+    "devSer": "PCU18070105",
+    "home": "D10"
+  },
+  {
+    "start": 1400,
+    "name": "metering015",
+    "devSer": "PCU18070106",
+    "home": "D11"
+  },
+  {
+    "start": 1500,
+    "name": "metering016",
+    "devSer": "PCU18070107",
+    "home": "D12"
+  },
+  {
+    "start": 1600,
+    "name": "metering017",
+    "devSer": "PCU18070108",
+    "home": "D13"
+  },
+  {
+    "start": 1700,
+    "name": "metering018",
+    "devSer": "PCU18070109",
+    "home": "D14"
+  },
+  {
+    "start": 1800,
+    "name": "metering019",
+    "devSer": "PCU18070110",
+    "home": "D15"
+  },
+  {
+    "start": 1900,
+    "name": "metering020",
+    "devSer": "PCU18070111",
+    "home": "D16"
+  },
+  {
+    "start": 2000,
+    "name": "metering021",
+    "devSer": "PCU18070112",
+    "home": "D17"
+  },
+  {
+    "start": 2100,
+    "name": "metering022",
+    "devSer": "PCU18070113",
+    "home": "D18"
+  },
+  {
+    "start": 2200,
+    "name": "metering023",
+    "devSer": "PCU18070114",
+    "home": "D19"
+  },
+  {
+    "start": 2300,
+    "name": "metering024",
+    "devSer": "PCU18070115",
+    "home": "D20"
+  },
+  {
+    "start": 2400,
+    "name": "metering025",
+    "devSer": "PCU18070116",
+    "home": "D21"
+  },
+  {
+    "start": 2500,
+    "name": "metering026",
+    "devSer": "PCU18070117",
+    "home": "D22"
+  },
+  {
+    "start": 2600,
+    "name": "metering027",
+    "devSer": "PCU18070118",
+    "home": "D23"
+  },
+  {
+    "start": 2700,
+    "name": "metering028",
+    "devSer": "PCU18070119",
+    "home": "D24"
+  },
+  {
+    "start": 2800,
+    "name": "metering029",
+    "devSer": "PCU18070120",
+    "home": "D25"
+  },
+  {
+    "start": 2900,
+    "name": "metering030",
+    "devSer": "PCU18070121",
+    "home": "D26"
+  },
+  {
+    "start": 3000,
+    "name": "metering031",
+    "devSer": "PCU18070122",
+    "home": "D26A"
+  },
+  {
+    "start": 3100,
+    "name": "metering032",
+    "devSer": "PCU18070123",
+    "home": "D26B"
+  },
+  {
+    "start": 3200,
+    "name": "metering033",
+    "devSer": "PCU18070124",
+    "home": "D27"
+  },
+  {
+    "start": 3300,
+    "name": "metering034",
+    "devSer": "PCU18070125",
+    "home": "D28"
+  },
+  {
+    "start": 3400,
+    "name": "metering035",
+    "devSer": "PCU18070126",
+    "home": "D28A"
+  },
+  {
+    "start": 3500,
+    "name": "metering036",
+    "devSer": "PCU18070127",
+    "home": "D28B"
+  },
+  {
+    "start": 3600,
+    "name": "metering037",
+    "devSer": "PCU18070128",
+    "home": "D29"
+  },
+  {
+    "start": 3700,
+    "name": "metering038",
+    "devSer": "PCU18070129",
+    "home": "D30"
+  },
+  {
+    "start": 3800,
+    "name": "metering039",
+    "devSer": "PCU18070130",
+    "home": "D31"
+  },
+  {
+    "start": 3900,
+    "name": "metering040",
+    "devSer": "PCU18070131",
+    "home": "D32"
+  },
+  {
+    "start": 4000,
+    "name": "metering041",
+    "devSer": "PCU18070132",
+    "home": "D33"
+  },
+  {
+    "start": 4100,
+    "name": "metering042",
+    "devSer": "PCU18070133",
+    "home": "D34"
+  },
+  {
+    "start": 4200,
+    "name": "metering043",
+    "devSer": "PCU18070134",
+    "home": "D36"
+  },
+  {
+    "start": 4400,
+    "name": "metering045",
+    "devSer": "PCU18070135",
+    "home": "D37"
+  },
+  {
+    "start": 4500,
+    "name": "metering046",
+    "devSer": "PCU18070136",
+    "home": "D38"
+  },
+  {
+    "start": 4600,
+    "name": "metering047",
+    "devSer": "PCU18070137",
+    "home": "D38A"
+  },
+  {
+    "start": 4800,
+    "name": "metering049",
+    "devSer": "PCU18070138",
+    "home": "D39"
+  },
+  {
+    "start": 4900,
+    "name": "metering050",
+    "devSer": "PCU18070139",
+    "home": "D40"
+  },
+  {
+    "start": 5000,
+    "name": "metering051",
+    "devSer": "PCU18070140",
+    "home": "D40A"
+  },
+  {
+    "start": 5100,
+    "name": "metering052",
+    "devSer": "PCU18070141",
+    "home": "D40B"
+  },
+  {
+    "start": 5200,
+    "name": "metering053",
+    "devSer": "PCU18070142",
+    "home": "D41"
+  },
+  {
+    "start": 5300,
+    "name": "metering054",
+    "devSer": "PCU18070143",
+    "home": "D42"
+  },
+  {
+    "start": 5400,
+    "name": "metering055",
+    "devSer": "PCU18070144",
+    "home": "D43"
+  },
+  {
+    "start": 5500,
+    "name": "metering056",
+    "devSer": "PCU18070145",
+    "home": "D44"
+  },
+  {
+    "start": 5600,
+    "name": "metering057",
+    "devSer": "PCU18070146",
+    "home": "D46"
+  },
+  {
+    "start": 5800,
+    "name": "metering059",
+    "devSer": "PCU18070147",
+    "home": "D47"
+  },
+  {
+    "start": 5900,
+    "name": "metering060",
+    "devSer": "PCU18070148",
+    "home": "D48"
+  },
+  {
+    "start": 6000,
+    "name": "metering061",
+    "devSer": "PCU18070149",
+    "home": "D49"
+  },
+  {
+    "start": 6100,
+    "name": "metering062",
+    "devSer": "PCU18070150",
+    "home": "D50"
+  },
+  {
+    "start": 6200,
+    "name": "metering063",
+    "devSer": "PCU18070151",
+    "home": "D52"
+  },
+  {
+    "start": 6400,
+    "name": "metering065",
+    "devSer": "PCU18070152",
+    "home": "D53"
+  },
+  {
+    "start": 6500,
+    "name": "metering066",
+    "devSer": "PCU18070153",
+    "home": "D54"
+  },
+  {
+    "start": 6600,
+    "name": "metering067",
+    "devSer": "PCU18070154",
+    "home": "D55"
+  },
+  {
+    "start": 6700,
+    "name": "metering068",
+    "devSer": "PCU18070155",
+    "home": "D56"
+  },
+  {
+    "start": 6800,
+    "name": "metering069",
+    "devSer": "PCU18070156",
+    "home": "D57"
+  },
+  {
+    "start": 6900,
+    "name": "metering070",
+    "devSer": "PCU18070157",
+    "home": "D58"
+  },
+  {
+    "start": 7000,
+    "name": "metering071",
+    "devSer": "PCU18070158",
+    "home": "D58A"
+  },
+  {
+    "start": 7100,
+    "name": "metering072",
+    "devSer": "PCU18070159",
+    "home": "D58B"
+  },
+  {
+    "start": 7200,
+    "name": "metering073",
+    "devSer": "PCU18070160",
+    "home": "D59"
+  },
+  {
+    "start": 7300,
+    "name": "metering074",
+    "devSer": "PCU18070161",
+    "home": "D60"
+  },
+  {
+    "start": 7400,
+    "name": "metering075",
+    "devSer": "PCU18070162",
+    "home": "D60A"
+  },
+  {
+    "start": 7500,
+    "name": "metering076",
+    "devSer": "PCU18070163",
+    "home": "D60B"
+  },
+  {
+    "start": 7600,
+    "name": "metering077",
+    "devSer": "PCU18070164",
+    "home": "D61"
+  },
+  {
+    "start": 7700,
+    "name": "metering078",
+    "devSer": "PCU18070165",
+    "home": "D62"
+  },
+  {
+    "start": 7800,
+    "name": "metering079",
+    "devSer": "PCU18070166",
+    "home": "D63"
+  },
+  {
+    "start": 7900,
+    "name": "metering080",
+    "devSer": "PCU18070167",
+    "home": "D64"
+  },
+  {
+    "start": 8000,
+    "name": "metering081",
+    "devSer": "PCU18070168",
+    "home": "D66"
+  },
+  {
+    "start": 8200,
+    "name": "metering083",
+    "devSer": "PCU18070169",
+    "home": "D67"
+  },
+  {
+    "start": 8300,
+    "name": "metering084",
+    "devSer": "PCU18070170",
+    "home": "D68"
+  },
+  {
+    "start": 8400,
+    "name": "metering085",
+    "devSer": "PCU18070171",
+    "home": "D69"
+  },
+  {
+    "start": 8500,
+    "name": "metering086",
+    "devSer": "PCU18070172",
+    "home": "D70"
+  },
+  {
+    "start": 8600,
+    "name": "metering087",
+    "devSer": "PCU18070173",
+    "home": "D71"
+  },
+  {
+    "start": 8700,
+    "name": "metering088",
+    "devSer": "PCU18070174",
+    "home": "D72"
+  },
+  {
+    "start": 8800,
+    "name": "metering089",
+    "devSer": "PCU18070175",
+    "home": "D73"
+  },
+  {
+    "start": 8900,
+    "name": "metering090",
+    "devSer": "PCU18070176",
+    "home": "D74"
+  },
+  {
+    "start": 9000,
+    "name": "metering091",
+    "devSer": "PCU18070177",
+    "home": "D74A"
+  },
+  {
+    "start": 9100,
+    "name": "metering092",
+    "devSer": "PCU18070178",
+    "home": "D74B"
+  },
+  {
+    "start": 9200,
+    "name": "metering093",
+    "devSer": "PCU18070179",
+    "home": "D75"
+  },
+  {
+    "start": 9300,
+    "name": "metering094",
+    "devSer": "PCU18070180",
+    "home": "D76"
+  },
+  {
+    "start": 9400,
+    "name": "metering095",
+    "devSer": "PCU18070181",
+    "home": "D76A"
+  },
+  {
+    "start": 9500,
+    "name": "metering096",
+    "devSer": "PCU18070182",
+    "home": "D76B"
+  },
+  {
+    "start": 9600,
+    "name": "metering097",
+    "devSer": "PCU18070183",
+    "home": "D77"
+  },
+  {
+    "start": 9700,
+    "name": "metering098",
+    "devSer": "PCU18070184",
+    "home": "D78"
+  },
+  {
+    "start": 9800,
+    "name": "metering099",
+    "devSer": "PCU18070185",
+    "home": "D79"
+  },
+  {
+    "start": 9900,
+    "name": "metering100",
+    "devSer": "PCU18070186",
+    "home": "D80"
+  },
+  {
+    "start": 10000,
+    "name": "metering101",
+    "devSer": "PCU18070187",
+    "home": "D81"
+  },
+  {
+    "start": 10100,
+    "name": "metering102",
+    "devSer": "PCU18070188",
+    "home": "D82"
+  },
+  {
+    "start": 10200,
+    "name": "metering103",
+    "devSer": "PCU18070189",
+    "home": "D83"
+  },
+  {
+    "start": 10300,
+    "name": "metering104",
+    "devSer": "PCU18070190",
+    "home": "D84"
+  },
+  {
+    "start": 10400,
+    "name": "metering105",
+    "devSer": "PCU18070191",
+    "home": "D85"
+  },
+  {
+    "start": 10500,
+    "name": "metering106",
+    "devSer": "PCU18070192",
+    "home": "D86"
+  },
+  {
+    "start": 10600,
+    "name": "metering107",
+    "devSer": "PCU18070193",
+    "home": "D87"
+  },
+  {
+    "start": 10700,
+    "name": "metering108",
+    "devSer": "PCU18070194",
+    "home": "D88"
+  },
+  {
+    "start": 10800,
+    "name": "metering109",
+    "devSer": "PCU18070195",
+    "home": "D89"
+  },
+  {
+    "start": 10900,
+    "name": "metering110",
+    "devSer": "PCU18070196",
+    "home": "D90"
+  },
+  {
+    "start": 11000,
+    "name": "metering111",
+    "devSer": "PCU18070197",
+    "home": "DD01"
+  },
+  {
+    "start": 11200,
+    "name": "metering113",
+    "devSer": "PCU18070198",
+    "home": "DD04"
+  },
+  {
+    "start": 11400,
+    "name": "metering115",
+    "devSer": "PCU18070199",
+    "home": "DD05"
+  },
+  {
+    "start": 11600,
+    "name": "metering117",
+    "devSer": "PCU18070200",
+    "home": "DD06"
+  },
+  {
+    "start": 11800,
+    "name": "metering119",
+    "devSer": "PCU18070201",
+    "home": "DD07"
+  },
+  {
+    "start": 12000,
+    "name": "metering121",
+    "devSer": "PCU18070202",
+    "home": "DD12"
+  },
+  {
+    "start": 12200,
+    "name": "metering123",
+    "devSer": "PCU18070203",
+    "home": "DD13"
+  },
+  {
+    "start": 12400,
+    "name": "metering125",
+    "devSer": "PCU18070204",
+    "home": "DD16"
+  },
+  {
+    "start": 12600,
+    "name": "metering127",
+    "devSer": "PCU18070205",
+    "home": "E02"
+  },
+  {
+    "start": 12800,
+    "name": "metering129",
+    "devSer": "PCU18070206",
+    "home": "E03"
+  },
+  {
+    "start": 13000,
+    "name": "metering131",
+    "devSer": "PCU18070207",
+    "home": "E04"
+  },
+  {
+    "start": 13200,
+    "name": "metering133",
+    "devSer": "PCU18070208",
+    "home": "E05"
+  },
+  {
+    "start": 13400,
+    "name": "metering135",
+    "devSer": "PCU18070209",
+    "home": "E06"
+  },
+  {
+    "start": 13600,
+    "name": "metering137",
+    "devSer": "PCU18070210",
+    "home": "E07"
+  },
+  {
+    "start": 13800,
+    "name": "metering139",
+    "devSer": "PCU18070211",
+    "home": "E08"
+  },
+  {
+    "start": 14000,
+    "name": "metering141",
+    "devSer": "PCU18070212",
+    "home": "E09"
+  },
+  {
+    "start": 14200,
+    "name": "metering143",
+    "devSer": "PCU18070213",
+    "home": "E11"
+  },
+  {
+    "start": 14400,
+    "name": "metering145",
+    "devSer": "PCU18070214",
+    "home": "E12"
+  },
+  {
+    "start": 14600,
+    "name": "metering147",
+    "devSer": "PCU18070215",
+    "home": "E15"
+  },
+  {
+    "start": 14800,
+    "name": "metering149",
+    "devSer": "PCU18070216",
+    "home": "E16"
+  },
+  {
+    "start": 15000,
+    "name": "metering151",
+    "devSer": "PCU18070217",
+    "home": "E17"
+  },
+  {
+    "start": 15200,
+    "name": "metering153",
+    "devSer": "PCU18070218",
+    "home": "E18"
+  },
+  {
+    "start": 15400,
+    "name": "metering155",
+    "devSer": "PCU18070219",
+    "home": "E20"
+  },
+  {
+    "start": 15600,
+    "name": "metering157",
+    "devSer": "PCU18070220",
+    "home": "E21"
+  },
+  {
+    "start": 15800,
+    "name": "metering159",
+    "devSer": "PCU18070221",
+    "home": "E22"
+  },
+  {
+    "start": 16000,
+    "name": "metering161",
+    "devSer": "PCU18070222",
+    "home": "E24"
+  },
+  {
+    "start": 16200,
+    "name": "metering163",
+    "devSer": "PCU18070223",
+    "home": "E25"
+  },
+  {
+    "start": 16400,
+    "name": "metering165",
+    "devSer": "PCU18070224",
+    "home": "E26"
+  },
+  {
+    "start": 16600,
+    "name": "metering167",
+    "devSer": "PCU18070225",
+    "home": "E27"
+  },
+  {
+    "start": 16800,
+    "name": "metering169",
+    "devSer": "PCU18070226",
+    "home": "E28"
+  },
+  {
+    "start": 17000,
+    "name": "metering171",
+    "devSer": "PCU18070227",
+    "home": "E29"
+  },
+  {
+    "start": 17200,
+    "name": "metering173",
+    "devSer": "PCU18070228",
+    "home": "E30"
+  },
+  {
+    "start": 17400,
+    "name": "metering175",
+    "devSer": "PCU18070229",
+    "home": "E31"
+  },
+  {
+    "start": 17600,
+    "name": "metering177",
+    "devSer": "PCU18070230",
+    "home": "E32"
+  },
+  {
+    "start": 17800,
+    "name": "metering179",
+    "devSer": "PCU18070231",
+    "home": "E33"
+  },
+  {
+    "start": 18000,
+    "name": "metering181",
+    "devSer": "PCU18070232",
+    "home": "E34"
+  },
+  {
+    "start": 18200,
+    "name": "metering183",
+    "devSer": "PCU18070233",
+    "home": "E35"
+  },
+  {
+    "start": 18400,
+    "name": "metering185",
+    "devSer": "PCU18070234",
+    "home": "E36"
+  },
+  {
+    "start": 18600,
+    "name": "metering187",
+    "devSer": "PCU18070235",
+    "home": "E37"
+  },
+  {
+    "start": 18800,
+    "name": "metering189",
+    "devSer": "PCU18070236",
+    "home": "E38"
+  },
+  {
+    "start": 19000,
+    "name": "metering191",
+    "devSer": "PCU18070237",
+    "home": "E39"
+  },
+  {
+    "start": 19200,
+    "name": "metering193",
+    "devSer": "PCU18070238",
+    "home": "E40"
+  },
+  {
+    "start": 19400,
+    "name": "metering195",
+    "devSer": "PCU18070239",
+    "home": "E41"
+  },
+  {
+    "start": 19600,
+    "name": "metering197",
+    "devSer": "PCU18070240",
+    "home": "E42"
+  },
+  {
+    "start": 19800,
+    "name": "metering199",
+    "devSer": "PCU18070241",
+    "home": "E43"
+  },
+  {
+    "start": 20000,
+    "name": "metering201",
+    "devSer": "PCU18070242",
+    "home": "E44"
+  },
+  {
+    "start": 20200,
+    "name": "metering203",
+    "devSer": "PCU18070243",
+    "home": "E45"
+  },
+  {
+    "start": 20400,
+    "name": "metering205",
+    "devSer": "PCU18070244",
+    "home": "E46"
+  },
+  {
+    "start": 20600,
+    "name": "metering207",
+    "devSer": "PCU18070245",
+    "home": "E47"
+  },
+  {
+    "start": 20800,
+    "name": "metering209",
+    "devSer": "PCU18070246",
+    "home": "E48"
+  },
+  {
+    "start": 21000,
+    "name": "metering211",
+    "devSer": "PCU18070247",
+    "home": "E50"
+  },
+  {
+    "start": 21200,
+    "name": "metering213",
+    "devSer": "PCU18070248",
+    "home": "E51"
+  },
+  {
+    "start": 21400,
+    "name": "metering215",
+    "devSer": "PCU18070249",
+    "home": "E52"
+  },
+  {
+    "start": 21600,
+    "name": "metering217",
+    "devSer": "PCU18070250",
+    "home": "E53"
+  },
+  {
+    "start": 21800,
+    "name": "metering219",
+    "devSer": "PCU18070251",
+    "home": "E54"
+  },
+  {
+    "start": 22000,
+    "name": "metering221",
+    "devSer": "PCU18070252",
+    "home": "E56"
+  },
+  {
+    "start": 22200,
+    "name": "metering223",
+    "devSer": "PCU18070253",
+    "home": "E57"
+  },
+  {
+    "start": 22400,
+    "name": "metering225",
+    "devSer": "PCU18070254",
+    "home": "E58"
+  },
+  {
+    "start": 22600,
+    "name": "metering227",
+    "devSer": "PCU18070255",
+    "home": "E60"
+  },
+  {
+    "start": 22800,
+    "name": "metering229",
+    "devSer": "PCU18070001",
+    "home": "B01"
+  },
+  {
+    "start": 23000,
+    "name": "metering231",
+    "devSer": "PCU18070002",
+    "home": "B02"
+  },
+  {
+    "start": 23200,
+    "name": "metering233",
+    "devSer": "PCU18070003",
+    "home": "B03"
+  },
+  {
+    "start": 23400,
+    "name": "metering235",
+    "devSer": "PCU18070004",
+    "home": "B04"
+  },
+  {
+    "start": 23600,
+    "name": "metering237",
+    "devSer": "PCU18070005",
+    "home": "B05"
+  },
+  {
+    "start": 23800,
+    "name": "metering239",
+    "devSer": "PCU18070006",
+    "home": "B06"
+  },
+  {
+    "start": 24000,
+    "name": "metering241",
+    "devSer": "PCU18070007",
+    "home": "B07"
+  },
+  {
+    "start": 24200,
+    "name": "metering243",
+    "devSer": "PCU18070008",
+    "home": "B08"
+  },
+  {
+    "start": 24400,
+    "name": "metering245",
+    "devSer": "PCU18070009",
+    "home": "B09"
+  },
+  {
+    "start": 24600,
+    "name": "metering247",
+    "devSer": "PCU18070010",
+    "home": "B10"
+  },
+  {
+    "start": 24800,
+    "name": "metering249",
+    "devSer": "PCU18070011",
+    "home": "B11"
+  },
+  {
+    "start": 25000,
+    "name": "metering251",
+    "devSer": "PCU18070012",
+    "home": "B12"
+  },
+  {
+    "start": 25200,
+    "name": "metering253",
+    "devSer": "PCU18070014",
+    "home": "B14"
+  },
+  {
+    "start": 25400,
+    "name": "metering255",
+    "devSer": "PCU18070015",
+    "home": "B15"
+  },
+  {
+    "start": 25600,
+    "name": "metering257",
+    "devSer": "PCU18070016",
+    "home": "B16"
+  },
+  {
+    "start": 25800,
+    "name": "metering259",
+    "devSer": "PCU18070017",
+    "home": "B17"
+  },
+  {
+    "start": 26000,
+    "name": "metering261",
+    "devSer": "PCU18070018",
+    "home": "C01"
+  },
+  {
+    "start": 26200,
+    "name": "metering263",
+    "devSer": "PCU18070019",
+    "home": "C02"
+  },
+  {
+    "start": 26400,
+    "name": "metering265",
+    "devSer": "PCU18070020",
+    "home": "C03"
+  },
+  {
+    "start": 26600,
+    "name": "metering267",
+    "devSer": "PCU18070021",
+    "home": "C04"
+  },
+  {
+    "start": 26800,
+    "name": "metering269",
+    "devSer": "PCU18070022",
+    "home": "C05"
+  },
+  {
+    "start": 27000,
+    "name": "metering271",
+    "devSer": "PCU18070023",
+    "home": "C06"
+  },
+  {
+    "start": 27200,
+    "name": "metering273",
+    "devSer": "PCU18070024",
+    "home": "C07"
+  },
+  {
+    "start": 27400,
+    "name": "metering275",
+    "devSer": "PCU18070025",
+    "home": "C08"
+  },
+  {
+    "start": 27600,
+    "name": "metering277",
+    "devSer": "PCU18070026",
+    "home": "C09"
+  },
+  {
+    "start": 27800,
+    "name": "metering279",
+    "devSer": "PCU18070027",
+    "home": "C10"
+  },
+  {
+    "start": 28000,
+    "name": "metering281",
+    "devSer": "PCU18070028",
+    "home": "C11"
+  },
+  {
+    "start": 28200,
+    "name": "metering283",
+    "devSer": "PCU18070029",
+    "home": "C12"
+  },
+  {
+    "start": 28400,
+    "name": "metering285",
+    "devSer": "PCU18070030",
+    "home": "C13"
+  },
+  {
+    "start": 28600,
+    "name": "metering287",
+    "devSer": "PCU18070031",
+    "home": "C14"
+  },
+  {
+    "start": 28800,
+    "name": "metering289",
+    "devSer": "PCU18070032",
+    "home": "C15"
+  },
+  {
+    "start": 29000,
+    "name": "metering291",
+    "devSer": "PCU18070033",
+    "home": "C16"
+  },
+  {
+    "start": 29200,
+    "name": "metering293",
+    "devSer": "PCU18070034",
+    "home": "C17"
+  },
+  {
+    "start": 29400,
+    "name": "metering295",
+    "devSer": "PCU18070035",
+    "home": "C18"
+  },
+  {
+    "start": 29600,
+    "name": "metering297",
+    "devSer": "PCU18070036",
+    "home": "C19"
+  },
+  {
+    "start": 29800,
+    "name": "metering299",
+    "devSer": "PCU18070037",
+    "home": "C20"
+  },
+  {
+    "start": 30000,
+    "name": "metering301",
+    "devSer": "PCU18070038",
+    "home": "C21"
+  },
+  {
+    "start": 30200,
+    "name": "metering303",
+    "devSer": "PCU18070039",
+    "home": "C22"
+  },
+  {
+    "start": 30400,
+    "name": "metering305",
+    "devSer": "PCU18070040",
+    "home": "C24"
+  },
+  {
+    "start": 30600,
+    "name": "metering307",
+    "devSer": "PCU18070041",
+    "home": "C25"
+  },
+  {
+    "start": 30800,
+    "name": "metering309",
+    "devSer": "PCU18070042",
+    "home": "C26"
+  },
+  {
+    "start": 31000,
+    "name": "metering311",
+    "devSer": "PCU18070043",
+    "home": "C27"
+  },
+  {
+    "start": 31200,
+    "name": "metering313",
+    "devSer": "PCU18070044",
+    "home": "C28"
+  },
+  {
+    "start": 31400,
+    "name": "metering315",
+    "devSer": "PCU18070045",
+    "home": "C29"
+  },
+  {
+    "start": 31600,
+    "name": "metering317",
+    "devSer": "PCU18070046",
+    "home": "C30"
+  },
+  {
+    "start": 31800,
+    "name": "metering319",
+    "devSer": "PCU18070047",
+    "home": "C31"
+  },
+  {
+    "start": 32000,
+    "name": "metering321",
+    "devSer": "PCU18070048",
+    "home": "C32"
+  },
+  {
+    "start": 32200,
+    "name": "metering323",
+    "devSer": "PCU18070049",
+    "home": "C33"
+  },
+  {
+    "start": 32400,
+    "name": "metering325",
+    "devSer": "PCU18070050",
+    "home": "C35"
+  },
+  {
+    "start": 32600,
+    "name": "metering327",
+    "devSer": "PCU18070051",
+    "home": "C36"
+  },
+  {
+    "start": 32800,
+    "name": "metering329",
+    "devSer": "PCU18070052",
+    "home": "C38"
+  },
+  {
+    "start": 33000,
+    "name": "metering331",
+    "devSer": "PCU18070053",
+    "home": "C39"
+  },
+  {
+    "start": 33200,
+    "name": "metering333",
+    "devSer": "PCU18070054",
+    "home": "C40"
+  },
+  {
+    "start": 33400,
+    "name": "metering335",
+    "devSer": "PCU18070055",
+    "home": "C41"
+  },
+  {
+    "start": 33600,
+    "name": "metering337",
+    "devSer": "PCU18070056",
+    "home": "C43"
+  },
+  {
+    "start": 33800,
+    "name": "metering339",
+    "devSer": "PCU18070057",
+    "home": "C44"
+  },
+  {
+    "start": 34000,
+    "name": "metering341",
+    "devSer": "PCU18070058",
+    "home": "C45"
+  },
+  {
+    "start": 34200,
+    "name": "metering343",
+    "devSer": "PCU18070059",
+    "home": "C47"
+  },
+  {
+    "start": 34400,
+    "name": "metering345",
+    "devSer": "PCU18070060",
+    "home": "C48"
+  },
+  {
+    "start": 34600,
+    "name": "metering347",
+    "devSer": "PCU18070061",
+    "home": "C50"
+  },
+  {
+    "start": 34800,
+    "name": "metering349",
+    "devSer": "PCU18070062",
+    "home": "C51"
+  },
+  {
+    "start": 35000,
+    "name": "metering351",
+    "devSer": "PCU18070063",
+    "home": "C52"
+  },
+  {
+    "start": 35200,
+    "name": "metering353",
+    "devSer": "PCU18070064",
+    "home": "C53"
+  },
+  {
+    "start": 35400,
+    "name": "metering355",
+    "devSer": "PCU18070065",
+    "home": "C54"
+  },
+  {
+    "start": 35600,
+    "name": "metering357",
+    "devSer": "PCU18070066",
+    "home": "C55"
+  },
+  {
+    "start": 35800,
+    "name": "metering359",
+    "devSer": "PCU18070067",
+    "home": "C56"
+  },
+  {
+    "start": 36000,
+    "name": "metering361",
+    "devSer": "PCU18070068",
+    "home": "C57"
+  },
+  {
+    "start": 36200,
+    "name": "metering363",
+    "devSer": "PCU18070069",
+    "home": "C58"
+  },
+  {
+    "start": 36400,
+    "name": "metering365",
+    "devSer": "PCU18070070",
+    "home": "C59"
+  },
+  {
+    "start": 36600,
+    "name": "metering367",
+    "devSer": "PCU18070071",
+    "home": "C60"
+  },
+  {
+    "start": 36800,
+    "name": "metering369",
+    "devSer": "PCU18070072",
+    "home": "C61"
+  },
+  {
+    "start": 37000,
+    "name": "metering371",
+    "devSer": "PCU18070073",
+    "home": "C63"
+  },
+  {
+    "start": 37200,
+    "name": "metering373",
+    "devSer": "PCU18070074",
+    "home": "C65"
+  },
+  {
+    "start": 37400,
+    "name": "metering375",
+    "devSer": "PCU18070075",
+    "home": "C66"
+  },
+  {
+    "start": 37600,
+    "name": "metering377",
+    "devSer": "PCU18070076",
+    "home": "C67"
+  },
+  {
+    "start": 37800,
+    "name": "metering379",
+    "devSer": "PCU18070077",
+    "home": "C68"
+  },
+  {
+    "start": 38000,
+    "name": "metering381",
+    "devSer": "PCU18070078",
+    "home": "C69"
+  },
+  {
+    "start": 38200,
+    "name": "metering383",
+    "devSer": "PCU18070079",
+    "home": "C70"
+  },
+  {
+    "start": 38400,
+    "name": "metering385",
+    "devSer": "PCU18070080",
+    "home": "C71"
+  },
+  {
+    "start": 38600,
+    "name": "metering387",
+    "devSer": "PCU18070081",
+    "home": "C72"
+  },
+  {
+    "start": 38800,
+    "name": "metering389",
+    "devSer": "PCU18070082",
+    "home": "C73"
+  },
+  {
+    "start": 39000,
+    "name": "metering391",
+    "devSer": "PCU18070083",
+    "home": "CC01"
+  },
+  {
+    "start": 39200,
+    "name": "metering393",
+    "devSer": "PCU18070084",
+    "home": "CC02"
+  },
+  {
+    "start": 39400,
+    "name": "metering395",
+    "devSer": "PCU18100001",
+    "home": "E01"
+  },
+  {
+    "start": 39600,
+    "name": "metering397",
+    "devSer": "PCU18100002",
+    "home": "E10"
+  },
+  {
+    "start": 39800,
+    "name": "metering399",
+    "devSer": "PCU18100003",
+    "home": "E13"
+  },
+  {
+    "start": 40000,
+    "name": "metering401",
+    "devSer": "PCU18100004",
+    "home": "E14"
+  },
+  {
+    "start": 40200,
+    "name": "metering403",
+    "devSer": "PCU18100005",
+    "home": "E19"
+  },
+  {
+    "start": 40400,
+    "name": "metering405",
+    "devSer": "PCU18100006",
+    "home": "E23"
+  },
+  {
+    "start": 40600,
+    "name": "metering407",
+    "devSer": "PCU18100007",
+    "home": "E34"
+  },
+  {
+    "start": 40800,
+    "name": "metering409",
+    "devSer": "PCU18100008",
+    "home": "E47"
+  },
+  {
+    "start": 41000,
+    "name": "metering411",
+    "devSer": "PCU18100009",
+    "home": "E49"
+  },
+  {
+    "start": 41200,
+    "name": "metering413",
+    "devSer": "PCU18100010",
+    "home": "E55"
+  },
+  {
+    "start": 41400,
+    "name": "metering415",
+    "devSer": "PCU18100011",
+    "home": "E59"
+  },
+  {
+    "start": 41600,
+    "name": "metering417",
+    "devSer": "PCU18100012",
+    "home": "D07"
+  },
+  {
+    "start": 41800,
+    "name": "metering419",
+    "devSer": "PCU18100013",
+    "home": "D35"
+  },
+  {
+    "start": 42000,
+    "name": "metering421",
+    "devSer": "PCU18100014",
+    "home": "D38B"
+  },
+  {
+    "start": 42200,
+    "name": "metering423",
+    "devSer": "PCU18100015",
+    "home": "D45"
+  },
+  {
+    "start": 42400,
+    "name": "metering425",
+    "devSer": "PCU18100016",
+    "home": "D51"
+  },
+  {
+    "start": 42600,
+    "name": "metering427",
+    "devSer": "PCU18100017",
+    "home": "D65"
+  },
+  {
+    "start": 42800,
+    "name": "metering429",
+    "devSer": "PCU18100018",
+    "home": "C34"
+  },
+  {
+    "start": 43000,
+    "name": "metering431",
+    "devSer": "PCU18100019",
+    "home": "C37"
+  },
+  {
+    "start": 43200,
+    "name": "metering433",
+    "devSer": "PCU18100020",
+    "home": "C46"
+  },
+  {
+    "start": 43400,
+    "name": "metering435",
+    "devSer": "PCU18100021",
+    "home": "C49"
+  },
+  {
+    "start": 43600,
+    "name": "metering437",
+    "devSer": "PCU18100022",
+    "home": "C74"
+  },
+  {
+    "start": 43800,
+    "name": "metering439",
+    "devSer": "PCU18100023",
+    "home": "C75"
+  },
+  {
+    "start": 44000,
+    "name": "metering441",
+    "devSer": "PCU18100024",
+    "home": "DD02"
+  },
+  {
+    "start": 44200,
+    "name": "metering443",
+    "devSer": "PCU18100025",
+    "home": "DD03"
+  },
+  {
+    "start": 44400,
+    "name": "metering445",
+    "devSer": "PCU18100026",
+    "home": "DD08"
+  },
+  {
+    "start": 44600,
+    "name": "metering447",
+    "devSer": "PCU18100027",
+    "home": "DD09"
+  },
+  {
+    "start": 44800,
+    "name": "metering449",
+    "devSer": "PCU18100028",
+    "home": "DD10"
+  },
+  {
+    "start": 45000,
+    "name": "metering451",
+    "devSer": "PCU18100029",
+    "home": "DD11"
+  },
+  {
+    "start": 45200,
+    "name": "metering453",
+    "devSer": "PCU18100030",
+    "home": "DD14"
+  },
+  {
+    "start": 45400,
+    "name": "metering455",
+    "devSer": "PCU18100031",
+    "home": "DD15"
+  }
+]
