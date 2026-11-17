@@ -1,0 +1,2710 @@
+{
+  "generatedAt": "2026-11-16T16:12:42.107Z",
+  "source": "truthtablerumahkujang.rtf",
+  "entries": [
+    {
+      "home": "B01",
+      "serial": "PCU18070001",
+      "converterIp": "192.168.11.125",
+      "slaveId": 115,
+      "start": 22800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "B02",
+      "serial": "PCU18070002",
+      "converterIp": "192.168.11.126",
+      "slaveId": 116,
+      "start": 23000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "B03",
+      "serial": "PCU18070003",
+      "converterIp": "192.168.11.127",
+      "slaveId": 117,
+      "start": 23200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "B04",
+      "serial": "PCU18070004",
+      "converterIp": "192.168.11.128",
+      "slaveId": 118,
+      "start": 23400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "B05",
+      "serial": "PCU18070005",
+      "converterIp": "192.168.11.129",
+      "slaveId": 119,
+      "start": 23600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "B06",
+      "serial": "PCU18070006",
+      "converterIp": "192.168.11.130",
+      "slaveId": 120,
+      "start": 23800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "B07",
+      "serial": "PCU18070007",
+      "converterIp": "192.168.11.131",
+      "slaveId": 121,
+      "start": 24000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "B08",
+      "serial": "PCU18070008",
+      "converterIp": "192.168.11.132",
+      "slaveId": 122,
+      "start": 24200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "B09",
+      "serial": "PCU18070009",
+      "converterIp": "192.168.11.133",
+      "slaveId": 123,
+      "start": 24400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "B10",
+      "serial": "PCU18070010",
+      "converterIp": "192.168.11.134",
+      "slaveId": 124,
+      "start": 24600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "B11",
+      "serial": "PCU18070011",
+      "converterIp": "192.168.11.135",
+      "slaveId": 125,
+      "start": 24800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "B12",
+      "serial": "PCU18070012",
+      "converterIp": "192.168.11.136",
+      "slaveId": 126,
+      "start": 25000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "B13",
+      "serial": null,
+      "converterIp": "192.168.11.136",
+      "slaveId": null,
+      "start": null,
+      "meterIndex": 1,
+      "flags": {
+        "inheritedIp": true
+      }
+    },
+    {
+      "home": "B14",
+      "serial": "PCU18070014",
+      "converterIp": "192.168.11.178",
+      "slaveId": 127,
+      "start": 25200,
+      "meterIndex": 0,
+      "flags": {
+        "subnetFixed": true
+      }
+    },
+    {
+      "home": "B15",
+      "serial": "PCU18070015",
+      "converterIp": "192.168.11.138",
+      "slaveId": 128,
+      "start": 25400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "B16",
+      "serial": "PCU18070016",
+      "converterIp": "192.168.11.139",
+      "slaveId": 129,
+      "start": 25600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "B17",
+      "serial": "PCU18070017",
+      "converterIp": "192.168.11.140",
+      "slaveId": 130,
+      "start": 25800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C01",
+      "serial": "PCU18070018",
+      "converterIp": "192.168.11.141",
+      "slaveId": 131,
+      "start": 26000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C02",
+      "serial": "PCU18070019",
+      "converterIp": "192.168.11.142",
+      "slaveId": 132,
+      "start": 26200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C03",
+      "serial": "PCU18070020",
+      "converterIp": "192.168.11.143",
+      "slaveId": 133,
+      "start": 26400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C04",
+      "serial": "PCU18070021",
+      "converterIp": "192.168.11.144",
+      "slaveId": 134,
+      "start": 26600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C05",
+      "serial": "PCU18070022",
+      "converterIp": "192.168.11.145",
+      "slaveId": 135,
+      "start": 26800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C06",
+      "serial": "PCU18070023",
+      "converterIp": "192.168.11.146",
+      "slaveId": 136,
+      "start": 27000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C07",
+      "serial": "PCU18070024",
+      "converterIp": "192.168.11.147",
+      "slaveId": 137,
+      "start": 27200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C08",
+      "serial": "PCU18070025",
+      "converterIp": "192.168.11.148",
+      "slaveId": 138,
+      "start": 27400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C09",
+      "serial": "PCU18070026",
+      "converterIp": "192.168.11.149",
+      "slaveId": 139,
+      "start": 27600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C10",
+      "serial": "PCU18070027",
+      "converterIp": "192.168.11.150",
+      "slaveId": 140,
+      "start": 27800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C11",
+      "serial": "PCU18070028",
+      "converterIp": "192.168.11.151",
+      "slaveId": 141,
+      "start": 28000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C12",
+      "serial": "PCU18070029",
+      "converterIp": "192.168.11.152",
+      "slaveId": 142,
+      "start": 28200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C13",
+      "serial": "PCU18070030",
+      "converterIp": "192.168.11.153",
+      "slaveId": 143,
+      "start": 28400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C14",
+      "serial": "PCU18070031",
+      "converterIp": "192.168.11.154",
+      "slaveId": 144,
+      "start": 28600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C15",
+      "serial": "PCU18070032",
+      "converterIp": "192.168.11.155",
+      "slaveId": 145,
+      "start": 28800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C16",
+      "serial": "PCU18070033",
+      "converterIp": "192.168.11.156",
+      "slaveId": 146,
+      "start": 29000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C17",
+      "serial": "PCU18070034",
+      "converterIp": "192.168.11.157",
+      "slaveId": 147,
+      "start": 29200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C18",
+      "serial": "PCU18070035",
+      "converterIp": "192.168.11.158",
+      "slaveId": 148,
+      "start": 29400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C19",
+      "serial": "PCU18070036",
+      "converterIp": "192.168.11.159",
+      "slaveId": 149,
+      "start": 29600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C20",
+      "serial": "PCU18070037",
+      "converterIp": "192.168.11.160",
+      "slaveId": 150,
+      "start": 29800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C21",
+      "serial": "PCU18070038",
+      "converterIp": "192.168.11.161",
+      "slaveId": 151,
+      "start": 30000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C22",
+      "serial": "PCU18070039",
+      "converterIp": "192.168.11.162",
+      "slaveId": 152,
+      "start": 30200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C23",
+      "serial": "PCU25060001",
+      "converterIp": "192.168.11.233",
+      "slaveId": 231,
+      "start": null,
+      "meterIndex": 0,
+      "flags": {
+        "manual": true,
+        "serialFromDb": true
+      }
+    },
+    {
+      "home": "C24",
+      "serial": "PCU18070040",
+      "converterIp": "192.168.11.163",
+      "slaveId": 153,
+      "start": 30400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C25",
+      "serial": "PCU18070041",
+      "converterIp": "192.168.11.164",
+      "slaveId": 154,
+      "start": 30600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C26",
+      "serial": "PCU18070042",
+      "converterIp": "192.168.11.165",
+      "slaveId": 155,
+      "start": 30800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C27",
+      "serial": "PCU18070043",
+      "converterIp": "192.168.11.166",
+      "slaveId": 156,
+      "start": 31000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C28",
+      "serial": "PCU18070044",
+      "converterIp": "192.168.11.167",
+      "slaveId": 157,
+      "start": 31200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C29",
+      "serial": "PCU18070045",
+      "converterIp": "192.168.11.168",
+      "slaveId": 158,
+      "start": 31400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C30",
+      "serial": "PCU18070046",
+      "converterIp": "192.168.11.169",
+      "slaveId": 159,
+      "start": 31600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C31",
+      "serial": "PCU18070047",
+      "converterIp": "192.168.11.170",
+      "slaveId": 160,
+      "start": 31800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C32",
+      "serial": "PCU18070048",
+      "converterIp": "192.168.11.171",
+      "slaveId": 161,
+      "start": 32000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C33",
+      "serial": "PCU18070049",
+      "converterIp": "192.168.11.172",
+      "slaveId": 162,
+      "start": 32200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C34",
+      "serial": "PCU18100018",
+      "converterIp": "192.168.11.225",
+      "slaveId": 215,
+      "start": 42800,
+      "meterIndex": 0,
+      "flags": {
+        "serialFromDb": true
+      }
+    },
+    {
+      "home": "C35",
+      "serial": "PCU18070050",
+      "converterIp": "192.168.11.173",
+      "slaveId": 163,
+      "start": 32400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C36",
+      "serial": "PCU18070051",
+      "converterIp": "192.168.11.174",
+      "slaveId": 164,
+      "start": 32600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C37",
+      "serial": "PCU18100019",
+      "converterIp": "192.168.11.226",
+      "slaveId": 216,
+      "start": 43000,
+      "meterIndex": 0,
+      "flags": {
+        "serialFromDb": true
+      }
+    },
+    {
+      "home": "C38",
+      "serial": "PCU18070052",
+      "converterIp": "192.168.11.175",
+      "slaveId": 165,
+      "start": 32800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C39",
+      "serial": "PCU18070053",
+      "converterIp": "192.168.11.176",
+      "slaveId": 166,
+      "start": 33000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C40",
+      "serial": "PCU18070054",
+      "converterIp": "192.168.11.177",
+      "slaveId": 167,
+      "start": 33200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C41",
+      "serial": "PCU18070055",
+      "converterIp": "192.168.11.178",
+      "slaveId": 168,
+      "start": 33400,
+      "meterIndex": 1,
+      "flags": {}
+    },
+    {
+      "home": "C42",
+      "serial": "PCU25060002",
+      "converterIp": "192.168.11.178",
+      "slaveId": null,
+      "start": null,
+      "meterIndex": 2,
+      "flags": {
+        "inheritedIp": true,
+        "serialFromDb": true
+      }
+    },
+    {
+      "home": "C43",
+      "serial": "PCU18070056",
+      "converterIp": "192.168.11.179",
+      "slaveId": 169,
+      "start": 33600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C44",
+      "serial": "PCU18070057",
+      "converterIp": "192.168.11.180",
+      "slaveId": 170,
+      "start": 33800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C45",
+      "serial": "PCU18070058",
+      "converterIp": "192.168.11.181",
+      "slaveId": 171,
+      "start": 34000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C46",
+      "serial": "PCU18100020",
+      "converterIp": "192.168.11.227",
+      "slaveId": 217,
+      "start": 43200,
+      "meterIndex": 0,
+      "flags": {
+        "serialFromDb": true
+      }
+    },
+    {
+      "home": "C47",
+      "serial": "PCU18070059",
+      "converterIp": "192.168.11.182",
+      "slaveId": 172,
+      "start": 34200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C48",
+      "serial": "PCU18070060",
+      "converterIp": "192.168.11.183",
+      "slaveId": 173,
+      "start": 34400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C49",
+      "serial": "PCU18100021",
+      "converterIp": "192.168.11.228",
+      "slaveId": 218,
+      "start": 43400,
+      "meterIndex": 0,
+      "flags": {
+        "serialFromDb": true
+      }
+    },
+    {
+      "home": "C50",
+      "serial": "PCU18070061",
+      "converterIp": "192.168.11.184",
+      "slaveId": 174,
+      "start": 34600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C51",
+      "serial": "PCU18070062",
+      "converterIp": "192.168.11.185",
+      "slaveId": 175,
+      "start": 34800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C52",
+      "serial": "PCU18070063",
+      "converterIp": "192.168.11.186",
+      "slaveId": 176,
+      "start": 35000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C53",
+      "serial": "PCU18070064",
+      "converterIp": "192.168.11.187",
+      "slaveId": 177,
+      "start": 35200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C54",
+      "serial": "PCU18070065",
+      "converterIp": "192.168.11.188",
+      "slaveId": 178,
+      "start": 35400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C55",
+      "serial": "PCU18070066",
+      "converterIp": "192.168.11.189",
+      "slaveId": 179,
+      "start": 35600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C56",
+      "serial": "PCU18070067",
+      "converterIp": "192.168.11.190",
+      "slaveId": 180,
+      "start": 35800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C57",
+      "serial": "PCU18070068",
+      "converterIp": "192.168.11.191",
+      "slaveId": 181,
+      "start": 36000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C58",
+      "serial": "PCU18070069",
+      "converterIp": "192.168.11.192",
+      "slaveId": 182,
+      "start": 36200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C59",
+      "serial": "PCU18070070",
+      "converterIp": "192.168.11.193",
+      "slaveId": 183,
+      "start": 36400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C60",
+      "serial": "PCU18070071",
+      "converterIp": "192.168.11.194",
+      "slaveId": 184,
+      "start": 36600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C61",
+      "serial": "PCU18070072",
+      "converterIp": "192.168.11.195",
+      "slaveId": 185,
+      "start": 36800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C62",
+      "serial": "PCU25060003",
+      "converterIp": "192.168.11.195",
+      "slaveId": null,
+      "start": null,
+      "meterIndex": 1,
+      "flags": {
+        "inheritedIp": true,
+        "serialFromDb": true
+      }
+    },
+    {
+      "home": "C63",
+      "serial": "PCU18070073",
+      "converterIp": "192.168.11.196",
+      "slaveId": 186,
+      "start": 37000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C64",
+      "serial": "PCU25060004",
+      "converterIp": "192.168.11.196",
+      "slaveId": null,
+      "start": null,
+      "meterIndex": 1,
+      "flags": {
+        "inheritedIp": true,
+        "serialFromDb": true
+      }
+    },
+    {
+      "home": "C65",
+      "serial": "PCU18070074",
+      "converterIp": "192.168.11.197",
+      "slaveId": 187,
+      "start": 37200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C66",
+      "serial": "PCU18070075",
+      "converterIp": "192.168.11.198",
+      "slaveId": 188,
+      "start": 37400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C67",
+      "serial": "PCU18070076",
+      "converterIp": "192.168.11.199",
+      "slaveId": 189,
+      "start": 37600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C68",
+      "serial": "PCU18070077",
+      "converterIp": "192.168.11.200",
+      "slaveId": 190,
+      "start": 37800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C69",
+      "serial": "PCU18070078",
+      "converterIp": "192.168.11.201",
+      "slaveId": 191,
+      "start": 38000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C70",
+      "serial": "PCU18070079",
+      "converterIp": "192.168.11.202",
+      "slaveId": 192,
+      "start": 38200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C71",
+      "serial": "PCU18070080",
+      "converterIp": "192.168.11.203",
+      "slaveId": 193,
+      "start": 38400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C72",
+      "serial": "PCU18070081",
+      "converterIp": "192.168.11.204",
+      "slaveId": 194,
+      "start": 38600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C73",
+      "serial": "PCU18070082",
+      "converterIp": "192.168.11.205",
+      "slaveId": 195,
+      "start": 38800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "C74",
+      "serial": "PCU18100022",
+      "converterIp": "192.168.11.229",
+      "slaveId": 219,
+      "start": 43600,
+      "meterIndex": 0,
+      "flags": {
+        "serialFromDb": true
+      }
+    },
+    {
+      "home": "C75",
+      "serial": "PCU18100023",
+      "converterIp": "192.168.11.230",
+      "slaveId": 220,
+      "start": 43800,
+      "meterIndex": 0,
+      "flags": {
+        "serialFromDb": true
+      }
+    },
+    {
+      "home": "CC01",
+      "serial": "PCU18070083",
+      "converterIp": "192.168.11.206",
+      "slaveId": 196,
+      "start": 39000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "CC02",
+      "serial": "PCU18070084",
+      "converterIp": "192.168.11.207",
+      "slaveId": 197,
+      "start": 39200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D01",
+      "serial": "PCU18070093",
+      "converterIp": "192.168.11.11",
+      "slaveId": 1,
+      "start": 0,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D02",
+      "serial": "PCU18070094",
+      "converterIp": "192.168.11.11",
+      "slaveId": 2,
+      "start": 100,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D02A",
+      "serial": "PCU18070095",
+      "converterIp": "192.168.11.12",
+      "slaveId": 2,
+      "start": 200,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D02B",
+      "serial": "PCU18070096",
+      "converterIp": "192.168.11.12",
+      "slaveId": 3,
+      "start": 300,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D03",
+      "serial": "PCU18070097",
+      "converterIp": "192.168.11.13",
+      "slaveId": 3,
+      "start": 400,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D04",
+      "serial": "PCU18070098",
+      "converterIp": "192.168.11.13",
+      "slaveId": 4,
+      "start": 500,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D04A",
+      "serial": "PCU18070099",
+      "converterIp": "192.168.11.14",
+      "slaveId": 4,
+      "start": 600,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D04B",
+      "serial": "PCU18070100",
+      "converterIp": "192.168.11.14",
+      "slaveId": 5,
+      "start": 700,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D05",
+      "serial": "PCU18070101",
+      "converterIp": "192.168.11.15",
+      "slaveId": 5,
+      "start": 800,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D06",
+      "serial": "PCU18070102",
+      "converterIp": "192.168.11.15",
+      "slaveId": 6,
+      "start": 900,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D07",
+      "serial": "PCU18100012",
+      "converterIp": "192.168.11.219",
+      "slaveId": 209,
+      "start": 41600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D08",
+      "serial": "PCU18070103",
+      "converterIp": "192.168.11.16",
+      "slaveId": 6,
+      "start": 1000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D09",
+      "serial": "PCU18070104",
+      "converterIp": "192.168.11.17",
+      "slaveId": 7,
+      "start": 1200,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D10",
+      "serial": "PCU18070105",
+      "converterIp": "192.168.11.17",
+      "slaveId": 8,
+      "start": 1300,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D11",
+      "serial": "PCU18070106",
+      "converterIp": "192.168.11.18",
+      "slaveId": 8,
+      "start": 1400,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D12",
+      "serial": "PCU18070107",
+      "converterIp": "192.168.11.18",
+      "slaveId": 9,
+      "start": 1500,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D13",
+      "serial": "PCU18070108",
+      "converterIp": "192.168.11.19",
+      "slaveId": 9,
+      "start": 1600,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D14",
+      "serial": "PCU18070109",
+      "converterIp": "192.168.11.19",
+      "slaveId": 10,
+      "start": 1700,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D15",
+      "serial": "PCU18070110",
+      "converterIp": "192.168.11.20",
+      "slaveId": 10,
+      "start": 1800,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D16",
+      "serial": "PCU18070111",
+      "converterIp": "192.168.11.20",
+      "slaveId": 11,
+      "start": 1900,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D17",
+      "serial": "PCU18070112",
+      "converterIp": "192.168.11.21",
+      "slaveId": 11,
+      "start": 2000,
+      "meterIndex": 0,
+      "flags": {
+        "typoFixed": true,
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D18",
+      "serial": "PCU18070113",
+      "converterIp": "192.168.11.21",
+      "slaveId": 12,
+      "start": 2100,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D19",
+      "serial": "PCU18070114",
+      "converterIp": "192.168.11.22",
+      "slaveId": 12,
+      "start": 2200,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D20",
+      "serial": "PCU18070115",
+      "converterIp": "192.168.11.22",
+      "slaveId": 13,
+      "start": 2300,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D21",
+      "serial": "PCU18070116",
+      "converterIp": "192.168.11.23",
+      "slaveId": 13,
+      "start": 2400,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D22",
+      "serial": "PCU18070117",
+      "converterIp": "192.168.11.23",
+      "slaveId": 14,
+      "start": 2500,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D23",
+      "serial": "PCU18070118",
+      "converterIp": "192.168.11.24",
+      "slaveId": 14,
+      "start": 2600,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D24",
+      "serial": "PCU18070119",
+      "converterIp": "192.168.11.24",
+      "slaveId": 15,
+      "start": 2700,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D25",
+      "serial": "PCU18070120",
+      "converterIp": "192.168.11.25",
+      "slaveId": 15,
+      "start": 2800,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D26",
+      "serial": "PCU18070121",
+      "converterIp": "192.168.11.25",
+      "slaveId": 16,
+      "start": 2900,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D26A",
+      "serial": "PCU18070122",
+      "converterIp": "192.168.11.26",
+      "slaveId": 16,
+      "start": 3000,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D26B",
+      "serial": "PCU18070123",
+      "converterIp": "192.168.11.26",
+      "slaveId": 17,
+      "start": 3100,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D27",
+      "serial": "PCU18070124",
+      "converterIp": "192.168.11.27",
+      "slaveId": 17,
+      "start": 3200,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D28",
+      "serial": "PCU18070125",
+      "converterIp": "192.168.11.27",
+      "slaveId": 18,
+      "start": 3300,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D28A",
+      "serial": "PCU18070126",
+      "converterIp": "192.168.11.28",
+      "slaveId": 18,
+      "start": 3400,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D28B",
+      "serial": "PCU18070127",
+      "converterIp": "192.168.11.28",
+      "slaveId": 19,
+      "start": 3500,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D29",
+      "serial": "PCU18070128",
+      "converterIp": "192.168.11.29",
+      "slaveId": 19,
+      "start": 3600,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D30",
+      "serial": "PCU18070129",
+      "converterIp": "192.168.11.29",
+      "slaveId": 20,
+      "start": 3700,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D31",
+      "serial": "PCU18070130",
+      "converterIp": "192.168.11.30",
+      "slaveId": 20,
+      "start": 3800,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D32",
+      "serial": "PCU18070131",
+      "converterIp": "192.168.11.30",
+      "slaveId": 21,
+      "start": 3900,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D33",
+      "serial": "PCU18070132",
+      "converterIp": "192.168.11.31",
+      "slaveId": 21,
+      "start": 4000,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D34",
+      "serial": "PCU18070133",
+      "converterIp": "192.168.11.31",
+      "slaveId": 22,
+      "start": 4100,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D35",
+      "serial": "PCU18100013",
+      "converterIp": "192.168.11.220",
+      "slaveId": 210,
+      "start": 41800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D36",
+      "serial": "PCU18070134",
+      "converterIp": "192.168.11.32",
+      "slaveId": 22,
+      "start": 4200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D37",
+      "serial": "PCU18070135",
+      "converterIp": "192.168.11.33",
+      "slaveId": 23,
+      "start": 4400,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D38",
+      "serial": "PCU18070136",
+      "converterIp": "192.168.11.33",
+      "slaveId": 24,
+      "start": 4500,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D38A",
+      "serial": "PCU18070137",
+      "converterIp": "192.168.11.34",
+      "slaveId": 24,
+      "start": 4600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D38B",
+      "serial": "PCU18100014",
+      "converterIp": "192.168.11.221",
+      "slaveId": 211,
+      "start": 42000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D39",
+      "serial": "PCU18070138",
+      "converterIp": "192.168.11.35",
+      "slaveId": 25,
+      "start": 4800,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D40",
+      "serial": "PCU18070139",
+      "converterIp": "192.168.11.35",
+      "slaveId": 26,
+      "start": 4900,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D40A",
+      "serial": "PCU18070140",
+      "converterIp": "192.168.11.36",
+      "slaveId": 26,
+      "start": 5000,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D40B",
+      "serial": "PCU18070141",
+      "converterIp": "192.168.11.36",
+      "slaveId": 27,
+      "start": 5100,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D41",
+      "serial": "PCU18070142",
+      "converterIp": "192.168.11.37",
+      "slaveId": 27,
+      "start": 5200,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D42",
+      "serial": "PCU18070143",
+      "converterIp": "192.168.11.37",
+      "slaveId": 28,
+      "start": 5300,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D43",
+      "serial": "PCU18070144",
+      "converterIp": "192.168.11.38",
+      "slaveId": 28,
+      "start": 5400,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D44",
+      "serial": "PCU18070145",
+      "converterIp": "192.168.11.38",
+      "slaveId": 29,
+      "start": 5500,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D46",
+      "serial": "PCU18070146",
+      "converterIp": "192.168.11.39",
+      "slaveId": 29,
+      "start": 5600,
+      "meterIndex": 1,
+      "flags": {}
+    },
+    {
+      "home": "D47",
+      "serial": "PCU18070147",
+      "converterIp": "192.168.11.40",
+      "slaveId": 30,
+      "start": 5800,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D48",
+      "serial": "PCU18070148",
+      "converterIp": "192.168.11.40",
+      "slaveId": 31,
+      "start": 5900,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D49",
+      "serial": "PCU18070149",
+      "converterIp": "192.168.11.41",
+      "slaveId": 31,
+      "start": 6000,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D50",
+      "serial": "PCU18070150",
+      "converterIp": "192.168.11.41",
+      "slaveId": 32,
+      "start": 6100,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D51",
+      "serial": "PCU18100015",
+      "converterIp": "192.168.11.223",
+      "slaveId": 213,
+      "start": 42200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D52",
+      "serial": "PCU18070151",
+      "converterIp": "192.168.11.42",
+      "slaveId": 32,
+      "start": 6200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D53",
+      "serial": "PCU18070152",
+      "converterIp": "192.168.11.43",
+      "slaveId": 33,
+      "start": 6400,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D54",
+      "serial": "PCU18070153",
+      "converterIp": "192.168.11.43",
+      "slaveId": 34,
+      "start": 6500,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D55",
+      "serial": "PCU18070154",
+      "converterIp": "192.168.11.44",
+      "slaveId": 34,
+      "start": 6600,
+      "meterIndex": 0,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D56",
+      "serial": "PCU18070155",
+      "converterIp": "192.168.11.44",
+      "slaveId": 35,
+      "start": 6700,
+      "meterIndex": 1,
+      "flags": {
+        "pairIdFixed": true
+      }
+    },
+    {
+      "home": "D57",
+      "serial": "PCU18070156",
+      "converterIp": "192.168.11.45",
+      "slaveId": 35,
+      "start": 6800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D58",
+      "serial": "PCU18070157",
+      "converterIp": "192.168.11.45",
+      "slaveId": null,
+      "start": 6900,
+      "meterIndex": 1,
+      "flags": {}
+    },
+    {
+      "home": "D58A",
+      "serial": "PCU18070158",
+      "converterIp": "192.168.11.46",
+      "slaveId": 36,
+      "start": 7000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D58B",
+      "serial": "PCU18070159",
+      "converterIp": "192.168.11.46",
+      "slaveId": null,
+      "start": 7100,
+      "meterIndex": 1,
+      "flags": {}
+    },
+    {
+      "home": "D59",
+      "serial": "PCU18070160",
+      "converterIp": "192.168.11.47",
+      "slaveId": 37,
+      "start": 7200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D60",
+      "serial": "PCU18070161",
+      "converterIp": "192.168.11.47",
+      "slaveId": null,
+      "start": 7300,
+      "meterIndex": 1,
+      "flags": {}
+    },
+    {
+      "home": "D60A",
+      "serial": "PCU18070162",
+      "converterIp": "192.168.11.48",
+      "slaveId": 38,
+      "start": 7400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D60B",
+      "serial": "PCU18070163",
+      "converterIp": "192.168.11.48",
+      "slaveId": null,
+      "start": 7500,
+      "meterIndex": 1,
+      "flags": {}
+    },
+    {
+      "home": "D61",
+      "serial": "PCU18070164",
+      "converterIp": "192.168.11.49",
+      "slaveId": 39,
+      "start": 7600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D62",
+      "serial": "PCU18070165",
+      "converterIp": "192.168.11.49",
+      "slaveId": null,
+      "start": 7700,
+      "meterIndex": 1,
+      "flags": {
+        "inheritedIp": true
+      }
+    },
+    {
+      "home": "D63",
+      "serial": "PCU18070166",
+      "converterIp": "192.168.11.50",
+      "slaveId": 40,
+      "start": 7800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D64",
+      "serial": "PCU18070167",
+      "converterIp": "192.168.11.50",
+      "slaveId": null,
+      "start": 7900,
+      "meterIndex": 1,
+      "flags": {
+        "inheritedIp": true
+      }
+    },
+    {
+      "home": "D65",
+      "serial": "PCU18100017",
+      "converterIp": "192.168.11.224",
+      "slaveId": 214,
+      "start": 42600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D66",
+      "serial": "PCU18070168",
+      "converterIp": "192.168.11.51",
+      "slaveId": 41,
+      "start": 8000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D67",
+      "serial": "PCU18070169",
+      "converterIp": "192.168.11.52",
+      "slaveId": 42,
+      "start": 8200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D68",
+      "serial": "PCU18070170",
+      "converterIp": "192.168.11.52",
+      "slaveId": null,
+      "start": 8300,
+      "meterIndex": 1,
+      "flags": {
+        "inheritedIp": true
+      }
+    },
+    {
+      "home": "D69",
+      "serial": "PCU18070171",
+      "converterIp": "192.168.11.53",
+      "slaveId": 43,
+      "start": 8400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D70",
+      "serial": "PCU18070172",
+      "converterIp": "192.168.11.53",
+      "slaveId": null,
+      "start": 8500,
+      "meterIndex": 1,
+      "flags": {
+        "inheritedIp": true
+      }
+    },
+    {
+      "home": "D71",
+      "serial": "PCU18070173",
+      "converterIp": "192.168.11.54",
+      "slaveId": 44,
+      "start": 8600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D72",
+      "serial": "PCU18070174",
+      "converterIp": "192.168.11.54",
+      "slaveId": null,
+      "start": 8700,
+      "meterIndex": 1,
+      "flags": {
+        "inheritedIp": true
+      }
+    },
+    {
+      "home": "D73",
+      "serial": "PCU18070175",
+      "converterIp": "192.168.11.55",
+      "slaveId": 45,
+      "start": 8800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D74",
+      "serial": "PCU18070176",
+      "converterIp": "192.168.11.55",
+      "slaveId": null,
+      "start": 8900,
+      "meterIndex": 1,
+      "flags": {
+        "inheritedIp": true
+      }
+    },
+    {
+      "home": "D74A",
+      "serial": "PCU18070177",
+      "converterIp": "192.168.11.56",
+      "slaveId": 46,
+      "start": 9000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D74B",
+      "serial": "PCU18070178",
+      "converterIp": "192.168.11.56",
+      "slaveId": null,
+      "start": 9100,
+      "meterIndex": 1,
+      "flags": {
+        "inheritedIp": true
+      }
+    },
+    {
+      "home": "D75",
+      "serial": "PCU18070179",
+      "converterIp": "192.168.11.57",
+      "slaveId": 47,
+      "start": 9200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D76",
+      "serial": "PCU18070180",
+      "converterIp": "192.168.11.57",
+      "slaveId": null,
+      "start": 9300,
+      "meterIndex": 1,
+      "flags": {
+        "inheritedIp": true
+      }
+    },
+    {
+      "home": "D76A",
+      "serial": "PCU18070181",
+      "converterIp": "192.168.11.58",
+      "slaveId": 48,
+      "start": 9400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D76B",
+      "serial": "PCU18070182",
+      "converterIp": "192.168.11.58",
+      "slaveId": null,
+      "start": 9500,
+      "meterIndex": 1,
+      "flags": {
+        "inheritedIp": true
+      }
+    },
+    {
+      "home": "D77",
+      "serial": "PCU18070183",
+      "converterIp": "192.168.11.59",
+      "slaveId": 49,
+      "start": 9600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D78",
+      "serial": "PCU18070184",
+      "converterIp": "192.168.11.59",
+      "slaveId": null,
+      "start": 9700,
+      "meterIndex": 1,
+      "flags": {
+        "inheritedIp": true
+      }
+    },
+    {
+      "home": "D79",
+      "serial": "PCU18070185",
+      "converterIp": "192.168.11.60",
+      "slaveId": 50,
+      "start": 9800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D80",
+      "serial": "PCU18070186",
+      "converterIp": "192.168.11.60",
+      "slaveId": null,
+      "start": 9900,
+      "meterIndex": 1,
+      "flags": {
+        "inheritedIp": true
+      }
+    },
+    {
+      "home": "D81",
+      "serial": "PCU18070187",
+      "converterIp": "192.168.11.61",
+      "slaveId": 51,
+      "start": 10000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D82",
+      "serial": "PCU18070188",
+      "converterIp": "192.168.11.61",
+      "slaveId": null,
+      "start": 10100,
+      "meterIndex": 1,
+      "flags": {
+        "inheritedIp": true
+      }
+    },
+    {
+      "home": "D83",
+      "serial": "PCU18070189",
+      "converterIp": "192.168.11.62",
+      "slaveId": 52,
+      "start": 10200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D84",
+      "serial": "PCU18070190",
+      "converterIp": "192.168.11.62",
+      "slaveId": null,
+      "start": 10300,
+      "meterIndex": 1,
+      "flags": {
+        "inheritedIp": true
+      }
+    },
+    {
+      "home": "D85",
+      "serial": "PCU18070191",
+      "converterIp": "192.168.11.63",
+      "slaveId": 53,
+      "start": 10400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D86",
+      "serial": "PCU18070192",
+      "converterIp": "192.168.11.63",
+      "slaveId": null,
+      "start": 10500,
+      "meterIndex": 1,
+      "flags": {
+        "inheritedIp": true
+      }
+    },
+    {
+      "home": "D87",
+      "serial": "PCU18070193",
+      "converterIp": "192.168.11.64",
+      "slaveId": 54,
+      "start": 10600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D88",
+      "serial": "PCU18070194",
+      "converterIp": "192.168.11.64",
+      "slaveId": null,
+      "start": 10700,
+      "meterIndex": 1,
+      "flags": {
+        "inheritedIp": true
+      }
+    },
+    {
+      "home": "D89",
+      "serial": "PCU18070195",
+      "converterIp": "192.168.11.65",
+      "slaveId": 55,
+      "start": 10800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D90",
+      "serial": "PCU18070196",
+      "converterIp": "192.168.11.65",
+      "slaveId": null,
+      "start": 10900,
+      "meterIndex": 1,
+      "flags": {
+        "inheritedIp": true
+      }
+    },
+    {
+      "home": "DD01",
+      "serial": "PCU18070197",
+      "converterIp": "192.168.11.66",
+      "slaveId": 56,
+      "start": 11000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "DD02",
+      "serial": "PCU18100024",
+      "converterIp": "192.168.11.231",
+      "slaveId": 221,
+      "start": 44000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "DD03",
+      "serial": "PCU18100025",
+      "converterIp": "192.168.11.232",
+      "slaveId": 222,
+      "start": 44200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "DD04",
+      "serial": "PCU18070198",
+      "converterIp": "192.168.11.67",
+      "slaveId": 57,
+      "start": 11200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "DD05",
+      "serial": "PCU18070199",
+      "converterIp": "192.168.11.68",
+      "slaveId": 58,
+      "start": 11400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "DD06",
+      "serial": "PCU18070200",
+      "converterIp": "192.168.11.69",
+      "slaveId": 59,
+      "start": 11600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "DD07",
+      "serial": "PCU18070201",
+      "converterIp": "192.168.11.70",
+      "slaveId": 60,
+      "start": 11800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "DD10",
+      "serial": "PCU18100028",
+      "converterIp": "192.168.11.235",
+      "slaveId": 225,
+      "start": 44800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "DD11",
+      "serial": "PCU18100029",
+      "converterIp": "192.168.11.236",
+      "slaveId": 226,
+      "start": 45000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "DD12",
+      "serial": "PCU18070202",
+      "converterIp": "192.168.11.71",
+      "slaveId": 61,
+      "start": 12000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "DD13",
+      "serial": "PCU18070203",
+      "converterIp": "192.168.11.72",
+      "slaveId": 62,
+      "start": 12200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "DD14",
+      "serial": "PCU18100030",
+      "converterIp": "192.168.11.237",
+      "slaveId": 227,
+      "start": 45200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "DD15",
+      "serial": "PCU18100031",
+      "converterIp": "192.168.11.238",
+      "slaveId": 228,
+      "start": 45400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "DD16",
+      "serial": "PCU18070204",
+      "converterIp": "192.168.11.73",
+      "slaveId": 63,
+      "start": 12400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E01",
+      "serial": "PCU18100001",
+      "converterIp": "192.168.11.208",
+      "slaveId": 198,
+      "start": 39400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E02",
+      "serial": "PCU18070205",
+      "converterIp": "192.168.11.74",
+      "slaveId": 64,
+      "start": 12600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E03",
+      "serial": "PCU18070206",
+      "converterIp": "192.168.11.75",
+      "slaveId": 65,
+      "start": 12800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E04",
+      "serial": "PCU18070207",
+      "converterIp": "192.168.11.76",
+      "slaveId": 66,
+      "start": 13000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E05",
+      "serial": "PCU18070208",
+      "converterIp": "192.168.11.77",
+      "slaveId": 67,
+      "start": 13200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E06",
+      "serial": "PCU18070209",
+      "converterIp": "192.168.11.78",
+      "slaveId": 68,
+      "start": 13400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E07",
+      "serial": "PCU18070210",
+      "converterIp": "192.168.11.79",
+      "slaveId": 69,
+      "start": 13600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E08",
+      "serial": "PCU18070211",
+      "converterIp": "192.168.11.80",
+      "slaveId": 70,
+      "start": 13800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E09",
+      "serial": "PCU18070212",
+      "converterIp": "192.168.11.81",
+      "slaveId": 71,
+      "start": 14000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E10",
+      "serial": "PCU18100002",
+      "converterIp": "192.168.11.209",
+      "slaveId": 199,
+      "start": 39600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E11",
+      "serial": "PCU18070213",
+      "converterIp": "192.168.11.82",
+      "slaveId": 72,
+      "start": 14200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E12",
+      "serial": "PCU18070214",
+      "converterIp": "192.168.11.83",
+      "slaveId": 73,
+      "start": 14400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E13",
+      "serial": "PCU18100003",
+      "converterIp": "192.168.11.210",
+      "slaveId": 200,
+      "start": 39800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E14",
+      "serial": "PCU18100004",
+      "converterIp": "192.168.11.211",
+      "slaveId": 201,
+      "start": 40000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E15",
+      "serial": "PCU18070215",
+      "converterIp": "192.168.11.84",
+      "slaveId": 74,
+      "start": 14600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E16",
+      "serial": "PCU18070216",
+      "converterIp": "192.168.11.85",
+      "slaveId": 75,
+      "start": 14800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E17",
+      "serial": "PCU18070217",
+      "converterIp": "192.168.11.86",
+      "slaveId": 76,
+      "start": 15000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E18",
+      "serial": "PCU18070218",
+      "converterIp": "192.168.11.87",
+      "slaveId": 77,
+      "start": 15200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E19",
+      "serial": "PCU18100005",
+      "converterIp": "192.168.11.212",
+      "slaveId": 202,
+      "start": 40200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E20",
+      "serial": "PCU18070219",
+      "converterIp": "192.168.11.88",
+      "slaveId": 78,
+      "start": 15400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E21",
+      "serial": "PCU18070220",
+      "converterIp": "192.168.11.89",
+      "slaveId": 79,
+      "start": 15600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E22",
+      "serial": "PCU18070221",
+      "converterIp": "192.168.11.90",
+      "slaveId": 80,
+      "start": 15800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E23",
+      "serial": "PCU18100006",
+      "converterIp": "192.168.11.213",
+      "slaveId": 203,
+      "start": 40400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E24",
+      "serial": "PCU18070222",
+      "converterIp": "192.168.11.91",
+      "slaveId": 81,
+      "start": 16000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E25",
+      "serial": "PCU18070223",
+      "converterIp": "192.168.11.92",
+      "slaveId": 82,
+      "start": 16200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E26",
+      "serial": "PCU18070224",
+      "converterIp": "192.168.11.93",
+      "slaveId": 83,
+      "start": 16400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E27",
+      "serial": "PCU18070225",
+      "converterIp": "192.168.11.94",
+      "slaveId": 84,
+      "start": 16600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E28",
+      "serial": "PCU18070226",
+      "converterIp": "192.168.11.95",
+      "slaveId": 85,
+      "start": 16800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E29",
+      "serial": "PCU18070227",
+      "converterIp": "192.168.11.96",
+      "slaveId": 86,
+      "start": 17000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E30",
+      "serial": "PCU18070228",
+      "converterIp": "192.168.11.97",
+      "slaveId": 87,
+      "start": 17200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E31",
+      "serial": "PCU18070229",
+      "converterIp": "192.168.11.98",
+      "slaveId": 88,
+      "start": 17400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E32",
+      "serial": "PCU18070230",
+      "converterIp": "192.168.11.99",
+      "slaveId": 89,
+      "start": 17600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E33",
+      "serial": "PCU18070231",
+      "converterIp": "192.168.11.100",
+      "slaveId": 90,
+      "start": 17800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E34",
+      "serial": "PCU18070232",
+      "converterIp": "192.168.11.101",
+      "slaveId": 91,
+      "start": 18000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E35",
+      "serial": "PCU18070233",
+      "converterIp": "192.168.11.102",
+      "slaveId": 92,
+      "start": 18200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E36",
+      "serial": "PCU18070234",
+      "converterIp": "192.168.11.103",
+      "slaveId": 93,
+      "start": 18400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E37",
+      "serial": "PCU18070235",
+      "converterIp": "192.168.11.104",
+      "slaveId": 94,
+      "start": 18600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E38",
+      "serial": "PCU18070236",
+      "converterIp": "192.168.11.105",
+      "slaveId": 95,
+      "start": 18800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E39",
+      "serial": "PCU18070237",
+      "converterIp": "192.168.11.106",
+      "slaveId": 96,
+      "start": 19000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E40",
+      "serial": "PCU18070238",
+      "converterIp": "192.168.11.107",
+      "slaveId": 97,
+      "start": 19200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E41",
+      "serial": "PCU18070239",
+      "converterIp": "192.168.11.108",
+      "slaveId": 98,
+      "start": 19400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E42",
+      "serial": "PCU18070240",
+      "converterIp": "192.168.11.109",
+      "slaveId": 99,
+      "start": 19600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E43",
+      "serial": "PCU18070241",
+      "converterIp": "192.168.11.110",
+      "slaveId": 100,
+      "start": 19800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E44",
+      "serial": "PCU18070242",
+      "converterIp": "192.168.11.111",
+      "slaveId": 101,
+      "start": 20000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E45",
+      "serial": "PCU18070243",
+      "converterIp": "192.168.11.112",
+      "slaveId": 102,
+      "start": 20200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E46",
+      "serial": "PCU18070244",
+      "converterIp": "192.168.11.113",
+      "slaveId": 103,
+      "start": 20400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E47",
+      "serial": "PCU18070245",
+      "converterIp": "192.168.11.114",
+      "slaveId": 104,
+      "start": 20600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E48",
+      "serial": "PCU18070246",
+      "converterIp": "192.168.11.115",
+      "slaveId": 105,
+      "start": 20800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E49",
+      "serial": "PCU18100009",
+      "converterIp": "192.168.11.216",
+      "slaveId": 206,
+      "start": 41000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E50",
+      "serial": "PCU18070247",
+      "converterIp": "192.168.11.116",
+      "slaveId": 106,
+      "start": 21000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E51",
+      "serial": "PCU18070248",
+      "converterIp": "192.168.11.117",
+      "slaveId": 107,
+      "start": 21200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E52",
+      "serial": "PCU18070249",
+      "converterIp": "192.168.11.118",
+      "slaveId": 108,
+      "start": 21400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E53",
+      "serial": "PCU18070250",
+      "converterIp": "192.168.11.119",
+      "slaveId": 109,
+      "start": 21600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E54",
+      "serial": "PCU18070251",
+      "converterIp": "192.168.11.120",
+      "slaveId": 110,
+      "start": 21800,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E55",
+      "serial": "PCU18100010",
+      "converterIp": "192.168.11.217",
+      "slaveId": 207,
+      "start": 41200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E56",
+      "serial": "PCU18070252",
+      "converterIp": "192.168.11.121",
+      "slaveId": 111,
+      "start": 22000,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E57",
+      "serial": "PCU18070253",
+      "converterIp": "192.168.11.122",
+      "slaveId": 112,
+      "start": 22200,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E58",
+      "serial": "PCU18070254",
+      "converterIp": "192.168.11.123",
+      "slaveId": 113,
+      "start": 22400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E59",
+      "serial": "PCU18100011",
+      "converterIp": "192.168.11.218",
+      "slaveId": 208,
+      "start": 41400,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "E60",
+      "serial": "PCU18070255",
+      "converterIp": "192.168.11.124",
+      "slaveId": 114,
+      "start": 22600,
+      "meterIndex": 0,
+      "flags": {}
+    },
+    {
+      "home": "D45",
+      "serial": "PCU18100016",
+      "converterIp": "192.168.11.39",
+      "slaveId": 30,
+      "start": 42400,
+      "meterIndex": 0,
+      "flags": {
+        "reserved": true,
+        "manual": true
+      }
+    },
+    {
+      "home": "DD08",
+      "serial": "PCU18100026",
+      "converterIp": "192.168.11.234",
+      "slaveId": 229,
+      "start": 44400,
+      "meterIndex": 0,
+      "flags": {
+        "manual": true
+      }
+    },
+    {
+      "home": "DD09",
+      "serial": "PCU18100027",
+      "converterIp": "192.168.11.239",
+      "slaveId": 230,
+      "start": 44600,
+      "meterIndex": 0,
+      "flags": {
+        "manual": true
+      }
+    }
+  ]
+}

@@ -49,6 +49,59 @@ sudo bash install-node-gateway.sh --mqtt-user <u> --mqtt-pass '<p>' [--mqtt-host
 - `meters.json` reload applies **only to NEW writes**: the `Uint16Array` register backing store is not reallocated, so a changed register map leaves old register values in place.
 - Modbus port or web host/port changes require a process restart; the API returns `restartRequired: true` and the dashboard shows it.
 
+## Meter identity: truth-table keyed (2026-11)
+
+`truth-table.json` (operator-confirmed, generated on the server from the DB — see `README_INSTRUCTION_RPI.md` in this folder) is the **canonical identity source**: `(converterIp, slaveId)` → home/serial/start. `meters.json` is only the read-map ("where to read"), kept as fallback.
+
+- Publisher resolves each scanned block: self-reported IP (regs 1/2) + slaveId (reg 3) → exact `(ip|slave)` match → 1:1 IP match → fallback to the matrix slot. **Publishing uses the truth serial**, not the slot's serial; a mismatch logs `[publisher] MISMATCH: converter … writes slot of … — publishing as …` once per slot (stderr).
+- Field reality (2026-11): 21+ live converters are B/C devices flashed with E/DD register starts, so nearly every active slot mismatches — E/DD readings under the old code were NOT those houses' data. `reg3` is 1 in every block (firmware doesn't write real slave IDs yet) → D-pairs (.23=D21/D22 etc.) stay ambiguous until firmware is fixed.
+- Validation: more than 2 slave-bearing meters on one converter IP refuses to start. Unknown IPs (e.g. `192.168.10.178`, likely B14 pre-subnet-fix) fall back to the matrix slot with a warning.
+- The truth index reloads on config save; the WiFi payload's `meter` annotation and the dashboard's IP↔house join use the same truth resolution.
+
+## Router telemetry (Teltonika RUT241) — optional/experimental
+
+`lib/rut241.js` polls the router's RutOS REST API (HTTPS :443, self-signed cert accepted) and publishes `router/{source}/status` QoS 1 every `rut241.intervalSec` (default 1800s, only when `rut241.enabled`):
+
+```json
+{
+  "timestamp": "ISO", "source": "<hostname>",
+  "device":     { manufacturer, model:"RUT241", serial, imei, imsi, iccid },
+  "connectivity": { state, operatorState, connType, networkType, operator, dataConnState, simState, pinState },
+  "signal":     { rssi, rsrp, rsrq, sinr, signal },
+  "usage":      { unit:"bytes", daily: [[epoch, rxBytes, txBytes], ...last62], todayRx, todayTx, last30Rx, last30Tx, samples },
+  "dataLimit":  [ { id, enabled, interface } ],
+  "system":     { uptimeSeconds, uptime, ramUsed, ramTotal, ramPercentage, loadavg, temperature },
+  "errors":     ["only present if some sub-fetch failed"]
+}
+```
+
+RutOS auth: `POST /api/login` → bearer token (expires ~299s — the module re-logins per poll); requests use `Authorization: Bearer`. Endpoint quirks: 403 "Unauthorized" = endpoint exists but token lacks permission; 404 code 122 "Endpoint not implemented" = wrong path for this firmware (real paths: `/api/modems/status`, `/api/data_usage/total/status`, `/api/data_limit/status`, `/api/system/device/usage/status`). HTTP port 80 serves the same API but is treated as insecure — always use HTTPS. Manual publish: dashboard button / `POST /api/rut/publish-now`.
+
+### Raspberry Pi host telemetry — optional
+
+`lib/pihost.js` reads local system stats and publishes `pi/{source}/status` QoS 1 every `pihost.intervalSec` (default 300s, only when `pihost.enabled`):
+
+```json
+{
+  "timestamp": "ISO", "source": "<hostname>",
+  "host":   { hostname, model, arch, cpus, kernel, uptimeSeconds },
+  "cpu":    { usagePercent, temperatureC, load1, load5, load15 },
+  "memory": { totalBytes, availableBytes, usedBytes, usedPercent },
+  "disk":   [ { path:"/", totalBytes, freeBytes, usedPercent }, { path:"/boot/firmware", ... } ],
+  "network": { "eth0": "192.168.10.116", ... },
+  "runtime": {
+    "node": { version, pid, gatewayUptimeSeconds, rssBytes, running },
+    "npm":  { available, version },
+    "pm2":  { active, home, apps: [ { name, status, pid, uptimeSeconds, restarts, memoryBytes, cpuPercent } ] }
+  },
+  "connectivity": { dnsOk, dnsIp, mqttBrokerTcp, rutReachable, gatewayMqttConnected, metersOnline, target },
+  "rpiConnect": { installed, running },
+  "errors": ["only present on partial failure"]
+}
+```
+
+Read via `/proc`, `/sys`, `os`, `fs.statfs`; pm2 via `pm2 jlist` (respects `PM2_HOME`, defaults to `~/.pm2` — works because the gateway runs under pm2 as its own user). Connectivity probes: DNS resolve of the MQTT host + TCP:1883 to it + TCP:443 to the RUT — do NOT probe arbitrary external IPs (the RUT/Telkomsel blocks them, e.g. `1.1.1.1:53` fails while DNS works). Manual publish: dashboard button / `POST /api/pi/publish-now`.
+
 ## Register map contract (lib/decode.js)
 
 The 100-register block layout is the wire contract with every field converter — it is byte-for-byte identical to the legacy Node-RED flow:

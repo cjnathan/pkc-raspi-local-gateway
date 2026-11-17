@@ -9,6 +9,8 @@ import { fileURLToPath } from "node:url";
 import { ModbusStore } from "./lib/modbus.js";
 import { Publisher } from "./lib/publisher.js";
 import { UnifiReader } from "./lib/unifi.js";
+import { Rut241 } from "./lib/rut241.js";
+import { PiHost } from "./lib/pihost.js";
 import { startWeb } from "./lib/web.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -33,16 +35,38 @@ if (!config) {
   fs.writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2) + "\n", { mode: 0o600 });
   console.log(`[gateway] created default config at ${CONFIG_PATH} — edit it via the dashboard`);
 }
+const TRUTH_PATH = path.join(__dirname, "truth-table.json");
+
+function loadTruth() {
+  const t = loadJson(TRUTH_PATH, null);
+  if (!t || !Array.isArray(t.entries)) {
+    console.warn("[gateway] truth-table.json missing/invalid — running legacy register-keyed attribution");
+    return null;
+  }
+  return t.entries;
+}
+
 let meters = loadJson(METERS_PATH, null);
 if (!Array.isArray(meters) || meters.length === 0) {
   console.error(`[gateway] ${METERS_PATH} missing or empty — generate it with tools/generate-meters-json.js`);
   process.exit(1);
 }
 if (!config.unifi.source) config.unifi.source = os.hostname();
+if (!config.rut241) config.rut241 = { enabled: false, url: "https://192.168.10.1", username: "admin", password: "", intervalSec: 1800, source: "" };
+if (!config.pihost) config.pihost = { enabled: false, intervalSec: 300, source: "" };
 
 const store = new ModbusStore(meters, config.modbus);
 const publisher = new Publisher(store, config, meters);
+try {
+  publisher.setTruthIndex(loadTruth());
+  if (publisher.truth) console.log(`[gateway] truth table loaded: ${publisher.truth.byKey.size} ip|slave identities`);
+} catch (e) {
+  console.error("[gateway] refusing to start:", e.message);
+  process.exit(1);
+}
 const unifi = new UnifiReader(config.unifi, publisher.client, () => publisher.meterIpIndex());
+const rut = new Rut241(config.rut241, () => publisher.client);
+const pihost = new PiHost(config.pihost, () => publisher.client, () => ({ mqtt: publisher.isMqttConnected(), metersOnline: publisher.overview().online }));
 store.start();
 publisher.start();
 if (config.unifi.enabled) unifi.start();
@@ -58,6 +82,7 @@ async function onConfigSaved(newConfig, newMeters) {
       newConfig.web?.host !== config.web.host;
     if (!newConfig.unifi.source) newConfig.unifi.source = os.hostname();
     store.debug = !!newConfig.modbus?.debug;
+    try { publisher.setTruthIndex(loadTruth()); } catch (e) { console.error("[gateway] truth table reload failed, keeping previous:", e.message); }
     const prevMqttHost = config.mqtt.host, prevMqttPort = config.mqtt.port, prevMqttUser = config.mqtt.username;
     config = newConfig;
     if (
@@ -70,6 +95,8 @@ async function onConfigSaved(newConfig, newMeters) {
       publisher.setConfig({ ...config }, newMeters || meters, true); // only rescan settings
     }
     unifi.setConfig(config.unifi, publisher.client);
+    rut.setConfig(config.rut241, () => publisher.client);
+    pihost.setConfig(config.pihost, () => publisher.client);
   }
   if (Array.isArray(newMeters) && newMeters.length) {
     meters = newMeters;
@@ -78,12 +105,14 @@ async function onConfigSaved(newConfig, newMeters) {
   return restartRequired;
 }
 
-startWeb({ ...config.web, publisher, unifi, store, configPath: CONFIG_PATH, metersPath: METERS_PATH, onConfigSaved });
+startWeb({ ...config.web, publisher, unifi, store, rut, pihost, configPath: CONFIG_PATH, metersPath: METERS_PATH, onConfigSaved });
 
 function shutdown() {
   console.log("[gateway] shutting down...");
   publisher.stop();
   unifi.stop();
+  rut.stop();
+  pihost.stop();
   store.stop(() => process.exit(0));
   setTimeout(() => process.exit(0), 3000);
 }

@@ -45,6 +45,8 @@
   <span class="pill" id="ov-meters">—</span>
   <span class="pill" id="ov-pub">—</span>
   <span class="pill dim" id="ov-modbus">—</span>
+  <span class="pill dim" id="ov-rut">—</span>
+  <span class="pill dim" id="ov-pi">—</span>
   <span class="pill dim" id="ov-uptime">—</span>
 </header>
 <nav>
@@ -119,6 +121,48 @@
     <h3>Last published payload</h3>
     <pre id="uf-payload">—</pre>
   </div>
+  <div class="card" id="rut-card">
+    <h3>Router — Teltonika RUT241 (experimental)</h3>
+    <div class="row">
+      <div><label>Status</label><span id="rut-enabled">—</span></div>
+      <div><label>Operator / state</label><span id="rut-op">—</span></div>
+      <div><label>Signal (RSRP/RSRQ/SINR/RSSI)</label><span id="rut-sig">—</span></div>
+      <div><label>Usage today</label><span id="rut-today">—</span></div>
+      <div><label>Usage 30 days</label><span id="rut-30">—</span></div>
+      <div><label>Uptime / RAM</label><span id="rut-sys">—</span></div>
+      <div><label>Last poll</label><span id="rut-lastpoll">—</span></div>
+      <div><label>Last publish</label><span id="rut-lastpub">—</span></div>
+      <div><label>Error</label><span id="rut-err" class="bad">—</span></div>
+    </div>
+    <div class="flexline">
+      <button class="btn ghost" onclick="rutPublishNow()">Publish now</button>
+      <span class="dim" style="font-size:12px">→ router/{source}/status · every 30 min when enabled</span>
+    </div>
+  </div>
+  <div class="card" id="pi-card">
+    <h3>Raspberry Pi host (experimental)</h3>
+    <div class="row">
+      <div><label>Status</label><span id="pi-enabled">—</span></div>
+      <div><label>CPU / temp</label><span id="pi-cpu">—</span></div>
+      <div><label>Memory</label><span id="pi-mem">—</span></div>
+      <div><label>Disk /</label><span id="pi-disk">—</span></div>
+      <div><label>Uptime</label><span id="pi-up">—</span></div>
+      <div><label>Node</label><span id="pi-node">—</span></div>
+      <div><label>npm</label><span id="pi-npm">—</span></div>
+      <div><label>pm2 daemon</label><span id="pi-pm2">—</span></div>
+      <div><label>rpi-connect</label><span id="pi-rpic">—</span></div>
+      <div><label>Connectivity</label><span id="pi-conn">—</span></div>
+      <div><label>Gateway MQTT / meters online</label><span id="pi-gw">—</span></div>
+      <div><label>Last publish</label><span id="pi-lastpub">—</span></div>
+      <div><label>Error</label><span id="pi-err" class="bad">—</span></div>
+    </div>
+    <div class="flexline" style="margin-top:6px">
+      <button class="btn ghost" onclick="piPublishNow()">Publish now</button>
+      <span class="dim" style="font-size:12px">→ pi/{source}/status · every 5 min when enabled</span>
+    </div>
+    <b style="font-size:12px;color:var(--dim);display:block;margin-top:10px">pm2 processes</b>
+    <table id="pi-pm2-table"><thead><tr><th>App</th><th>Status</th><th>PID</th><th>Uptime</th><th>Restarts</th><th>Memory</th><th>CPU</th></tr></thead><tbody></tbody></table>
+  </div>
 </section>
 
 <section id="tab-config" class="hidden">
@@ -162,6 +206,8 @@ const SIM_FIELDS = ["kwh","voltAN","voltBN","voltCN","currA","currB","currC","kw
 let metersCache = [];
 const meterByIp = new Map();
 let simDetail = null;
+const truthHome = (m) => (m.identifiedAs ? m.identifiedAs.home : m.home);
+const truthSerial = (m) => (m.identifiedAs ? m.identifiedAs.serial : m.serial);
 
 for (const b of document.querySelectorAll("nav button")) {
   b.onclick = () => {
@@ -185,6 +231,17 @@ async function refreshOverview() {
     document.getElementById("ov-modbus").textContent = "modbus " + (ov.modbus.openClients ?? "?") + " clients · " + (ov.modbus.totalRegisterWrites ?? 0) + " reg-writes";
   }
   document.getElementById("ov-uptime").textContent = "up " + ago(ov.publisher.uptimeSec);
+  const rutEl = document.getElementById("ov-rut");
+  if (ov.rut && ov.rut.lastPayload) {
+    const p = ov.rut.lastPayload;
+    rutEl.textContent = "RUT " + (p.signal ? p.signal.rsrp + "dBm" : "?") + " · " + (p.connectivity ? p.connectivity.state : "?") + " · " + (p.usage ? Math.round((p.usage.last30Rx + p.usage.last30Tx) / 1e9 * 10) / 10 + "GB/30d" : "?");
+    rutEl.className = "pill " + (p.connectivity && p.connectivity.state === "Connected" ? "ok" : "bad");
+  } else { rutEl.textContent = "RUT —"; rutEl.className = "pill dim"; }
+  const piEl = document.getElementById("ov-pi");
+  if (ov.pihost && ov.pihost.lastPayload) {
+    const p = ov.pihost.lastPayload;
+    piEl.textContent = "Pi " + (p.cpu ? p.cpu.temperatureC + "°C" : "?") + " · " + (p.memory ? p.memory.usedPercent + "%" : "?") + " · pm2 " + (p.runtime && p.runtime.pm2 && p.runtime.pm2.active ? p.runtime.pm2.apps.length + " apps" : "down");
+  } else { piEl.textContent = "Pi —"; piEl.className = "pill dim"; }
   if (ov.unifi) {
     document.getElementById("uf-enabled").textContent = ov.unifi.enabled ? "enabled" : "disabled";
     document.getElementById("uf-source").textContent = ov.unifi.source || "(hostname)";
@@ -196,12 +253,55 @@ async function refreshOverview() {
     errEl.className = ov.unifi.lastError ? "bad" : "dim";
     document.getElementById("uf-payload").textContent = ov.unifi.lastPayload ? JSON.stringify(ov.unifi.lastPayload, null, 2) : "— nothing published yet —";
   }
+  if (ov.rut) {
+    const s = ov.rut, p = s.lastPayload;
+    document.getElementById("rut-enabled").textContent = s.enabled ? "enabled" : "disabled";
+    document.getElementById("rut-op").textContent = p && p.connectivity ? (p.connectivity.operator + " · " + p.connectivity.state + " · " + p.connectivity.connType) : "—";
+    document.getElementById("rut-sig").textContent = p && p.signal ? `${p.signal.rsrp} / ${p.signal.rsrq} / ${p.signal.sinr} / ${p.signal.rssi} dBm` : "—";
+    const mb = (b) => b == null ? "—" : (b / 1e6).toFixed(1) + " MB";
+    document.getElementById("rut-today").textContent = p && p.usage ? mb(p.usage.todayRx + p.usage.todayTx) : "—";
+    document.getElementById("rut-30").textContent = p && p.usage ? mb(p.usage.last30Rx + p.usage.last30Tx) : "—";
+    document.getElementById("rut-sys").textContent = p && p.system ? (p.system.uptime || "—") + " · " + (p.system.ramUsed ?? "?") + "/" + (p.system.ramTotal ?? "?") + " MB · " + (p.system.temperature ?? "?") + "°C" : "—";
+    document.getElementById("rut-lastpoll").textContent = fmt(s.lastPollAt);
+    document.getElementById("rut-lastpub").textContent = fmt(s.lastPublishAt) + " (" + s.publishCount + ")";
+    const errEl = document.getElementById("rut-err");
+    errEl.textContent = s.lastError || "—";
+    errEl.className = s.lastError ? "bad" : "dim";
+  }
+  if (ov.pihost) {
+    const s = ov.pihost, p = s.lastPayload;
+    document.getElementById("pi-enabled").textContent = s.enabled ? "enabled" : "disabled";
+    const gb = (b) => b == null ? "—" : (b / 1073741824).toFixed(1) + " GB";
+    document.getElementById("pi-cpu").textContent = p && p.cpu ? `${p.cpu.usagePercent ?? "?"}% · ${p.cpu.temperatureC ?? "?"}°C · load ${p.cpu.load1}` : "—";
+    document.getElementById("pi-mem").textContent = p && p.memory ? `${p.memory.usedPercent}% of ${gb(p.memory.totalBytes)}` : "—";
+    const rootDisk = p && p.disk ? p.disk.find((d) => d.path === "/") : null;
+    document.getElementById("pi-disk").textContent = rootDisk ? `${rootDisk.usedPercent}% of ${gb(rootDisk.totalBytes)}` : "—";
+    document.getElementById("pi-up").textContent = p && p.host ? ago(p.host.uptimeSeconds) : "—";
+    document.getElementById("pi-node").textContent = p && p.runtime ? `${p.runtime.node.version} (pid ${p.runtime.node.pid}, up ${ago(p.runtime.node.gatewayUptimeSeconds)})` : "—";
+    document.getElementById("pi-npm").textContent = p && p.runtime ? (p.runtime.npm.available ? "v" + p.runtime.npm.version : "not available") : "—";
+    const pm2 = p && p.runtime ? p.runtime.pm2 : null;
+    document.getElementById("pi-pm2").textContent = pm2 ? (pm2.active ? "active · " + pm2.apps.length + " apps" : "down") : "—";
+    document.getElementById("pi-rpic").textContent = p && p.rpiConnect ? (p.rpiConnect.running ? "running" : (p.rpiConnect.installed ? "installed, stopped" : "not installed")) : "—";
+    document.getElementById("pi-conn").textContent = p && p.connectivity ? [`dns ${p.connectivity.dnsOk ? "ok" : "FAIL"}`, `mqtt broker ${p.connectivity.mqttBrokerTcp ? "ok" : "FAIL"}`, `rut ${p.connectivity.rutReachable ? "ok" : "FAIL"}`].join(" · ") : "—";
+    document.getElementById("pi-gw").textContent = p && p.connectivity ? `${p.connectivity.gatewayMqttConnected ? "connected" : "DOWN"} · ${p.connectivity.metersOnline ?? "?"}` : "—";
+    document.getElementById("pi-lastpub").textContent = fmt(s.lastPublishAt) + " (" + s.publishCount + ")";
+    const errEl = document.getElementById("pi-err");
+    errEl.textContent = s.lastError || (p && p.errors && p.errors.length ? p.errors.join("; ") : "—");
+    errEl.className = s.lastError || (p && p.errors && p.errors.length) ? "bad" : "dim";
+    const tb = document.querySelector("#pi-pm2-table tbody");
+    tb.innerHTML = "";
+    if (pm2 && pm2.active) for (const a of pm2.apps) {
+      tb.insertAdjacentHTML("beforeend",
+        `<tr><td><b>${a.name}</b></td><td class="${a.status === "online" ? "ok" : "bad"}">${a.status}</td><td>${a.pid ?? "—"}</td>` +
+        `<td>${ago(a.uptimeSeconds)}</td><td>${a.restarts ?? "—"}</td><td>${a.memoryBytes ? (a.memoryBytes / 1048576).toFixed(1) + " MB" : "—"}</td><td>${a.cpuPercent != null ? a.cpuPercent + "%" : "—"}</td></tr>`);
+    }
+  }
 }
 
 async function refreshMeters() {
   metersCache = await (await fetch("/api/meters")).json();
   meterByIp.clear();
-  for (const m of metersCache) if (m.converterIp) meterByIp.set(m.converterIp, m);
+  for (const m of metersCache) if (m.converterIp) meterByIp.set(m.converterIp, { home: truthHome(m), serial: truthSerial(m), online: m.online });
   ensureBlockOptions();
   const shown = applyFilters();
   document.getElementById("f-count").textContent = "showing " + shown.length + " of " + metersCache.length + " meters";
@@ -211,7 +311,7 @@ async function refreshMeters() {
     const tr = document.createElement("tr");
     tr.className = "clickable";
     tr.onclick = () => showMeterDetail(m.serial);
-    tr.innerHTML = `<td>${m.home ?? ""}</td><td>${m.serial}</td><td>${m.start}</td>` +
+    tr.innerHTML = `<td>${m.home ?? ""}${m.identifiedAs ? ` <span class="warn-note">→ ${m.identifiedAs.home}</span>` : ""}</td><td>${m.serial}</td><td>${m.start}</td>` +
       `<td class="${m.online ? "ok" : "bad"}">${m.online ? "online" : "offline"}</td>` +
       `<td>${m.freq === null ? "—" : m.freq.toFixed(1)}</td>` +
       `<td>${m.kwh === null ? "—" : m.kwh.toFixed(1)}</td>` +
@@ -258,6 +358,7 @@ async function showMeterDetail(serial) {
   const raw = d.rawRegisters.map((v, i) => `${String(i).padStart(2, "0")}:${(v & 0xffff).toString(16).padStart(4, "0")}`).join("  ");
   const seg3 = d.rawRegisters[1], seg4 = d.rawRegisters[2];
   const convIp = seg3 > 0 && seg4 > 0 ? `192.168.${seg3}.${seg4}` : null;
+  const idLine = d.identifiedAs ? `IDENTIFIED AS: ${d.identifiedAs.home} / ${d.identifiedAs.serial} (truth table — matrix slot ${serial} is misattributed)` : "IDENTIFIED AS: (no truth-table match — publishing as matrix serial)";
   let convLine;
   if (!convIp) convLine = "CONVERTER IP: (not written by converter)";
   else {
@@ -272,7 +373,7 @@ async function showMeterDetail(serial) {
   }
   alert(
     `${serial} (${d.home ?? "?"}) — block @ register ${d.start}\n\n` +
-    `${convLine}\n\n` +
+    `${idLine}\n${convLine}\n\n` +
     `RAW REGISTERS (idx:hex):\n${raw}\n\n` +
     `DECODED: ${JSON.stringify(d.decoded)}\n\n` +
     `LAST PUBLISHED PAYLOAD: ${JSON.stringify(d.lastPayload ?? null)}\n` +
@@ -337,6 +438,18 @@ async function doSimulate() {
 async function unifiPublishNow() {
   const r = await fetch("/api/unifi/publish-now", { method: "POST" });
   alert(r.ok ? `Published ${(await r.json()).devices} devices` : `Failed: ${(await r.json()).error}`);
+  refreshOverview();
+}
+async function rutPublishNow() {
+  const r = await fetch("/api/rut/publish-now", { method: "POST" });
+  const d = await r.json();
+  alert(r.ok ? `Published router status (${d.source})` : `Failed: ${d.error}`);
+  refreshOverview();
+}
+async function piPublishNow() {
+  const r = await fetch("/api/pi/publish-now", { method: "POST" });
+  const d = await r.json();
+  alert(r.ok ? `Published Pi status (${d.source})` : `Failed: ${d.error}`);
   refreshOverview();
 }
 let unifiLiveData = null, unifiLiveT = 0;
