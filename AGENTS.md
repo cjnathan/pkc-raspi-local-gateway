@@ -18,6 +18,9 @@ npm start                     # runs node gateway.js (no build step, no linter, 
 node tools/test-write-block.mjs   # simulates field converters writing blocks @0/@100; targets :10502, override with PKC_MODBUS_PORT (e.g. to test a local instance on another port without touching production)
 node tools/test-unifi-reader.mjs  # self-contained; spins a fake self-signed UniFi controller on :18443 (needs openssl)
 
+# Fresh-Pi provisioning (full stack: Node 20, pm2, MongoDB 8 + UniFi 9.4.19, gateway):
+sudo bash install-fresh-pi.sh     # secrets via env vars or interactive prompts (MQTT_*, UNIFI_*, RUT_*); never hardcoded
+
 # Regenerate meters.json from the legacy devSerNum.txt mapping:
 node tools/generate-meters-json.js /path/to/devSerNum.txt [out.json]
 ```
